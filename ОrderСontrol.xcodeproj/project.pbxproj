@@ -11,9 +11,10 @@
 		25D1B66928B519E9002D3B6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66828B519E9002D3B6C /* SceneDelegate.swift */; };
 		25D1B66B28B519E9002D3B6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66A28B519E9002D3B6C /* ViewController.swift */; };
 		25D1B66E28B519E9002D3B6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D1B66C28B519E9002D3B6C /* Main.storyboard */; };
-		25D1B67128B519E9002D3B6C /* _rder_ontrol.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66F28B519E9002D3B6C /* _rder_ontrol.xcdatamodeld */; };
+		25D1B67128B519E9002D3B6C /* OrderControl.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66F28B519E9002D3B6C /* OrderControl.xcdatamodeld */; };
 		25D1B67328B519E9002D3B6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25D1B67228B519E9002D3B6C /* Assets.xcassets */; };
 		25D1B67628B519E9002D3B6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D1B67428B519E9002D3B6C /* LaunchScreen.storyboard */; };
+		25D1B67F28B51B19002D3B6C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 25D1B67E28B51B19002D3B6C /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		25D1B67228B519E9002D3B6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25D1B67528B519E9002D3B6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25D1B67728B519E9002D3B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25D1B67E28B51B19002D3B6C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +60,57 @@
 		25D1B66528B519E9002D3B6C /* ОrderСontrol */ = {
 			isa = PBXGroup;
 			children = (
-				25D1B66628B519E9002D3B6C /* AppDelegate.swift */,
-				25D1B66828B519E9002D3B6C /* SceneDelegate.swift */,
-				25D1B66A28B519E9002D3B6C /* ViewController.swift */,
-				25D1B66C28B519E9002D3B6C /* Main.storyboard */,
-				25D1B67228B519E9002D3B6C /* Assets.xcassets */,
-				25D1B67428B519E9002D3B6C /* LaunchScreen.storyboard */,
-				25D1B67728B519E9002D3B6C /* Info.plist */,
-				25D1B66F28B519E9002D3B6C /* _rder_ontrol.xcdatamodeld */,
+				25D1B68128B51D52002D3B6C /* ViewControllers */,
+				25D1B68228B51D69002D3B6C /* Storyboards */,
+				25D1B68028B51D31002D3B6C /* App */,
+				25D1B68328B51D75002D3B6C /* Resourses */,
+				25D1B67D28B51AF1002D3B6C /* Git */,
+				25D1B66F28B519E9002D3B6C /* OrderControl.xcdatamodeld */,
 			);
 			path = "ОrderСontrol";
+			sourceTree = "<group>";
+		};
+		25D1B67D28B51AF1002D3B6C /* Git */ = {
+			isa = PBXGroup;
+			children = (
+				25D1B67E28B51B19002D3B6C /* .gitignore */,
+			);
+			path = Git;
+			sourceTree = "<group>";
+		};
+		25D1B68028B51D31002D3B6C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				25D1B66628B519E9002D3B6C /* AppDelegate.swift */,
+				25D1B66828B519E9002D3B6C /* SceneDelegate.swift */,
+				25D1B67728B519E9002D3B6C /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		25D1B68128B51D52002D3B6C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				25D1B66A28B519E9002D3B6C /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		25D1B68228B51D69002D3B6C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				25D1B66C28B519E9002D3B6C /* Main.storyboard */,
+				25D1B67428B519E9002D3B6C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		25D1B68328B51D75002D3B6C /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				25D1B67228B519E9002D3B6C /* Assets.xcassets */,
+			);
+			path = Resourses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +171,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25D1B67F28B51B19002D3B6C /* .gitignore in Resources */,
 				25D1B67628B519E9002D3B6C /* LaunchScreen.storyboard in Resources */,
 				25D1B67328B519E9002D3B6C /* Assets.xcassets in Resources */,
 				25D1B66E28B519E9002D3B6C /* Main.storyboard in Resources */,
@@ -143,7 +187,7 @@
 			files = (
 				25D1B66B28B519E9002D3B6C /* ViewController.swift in Sources */,
 				25D1B66728B519E9002D3B6C /* AppDelegate.swift in Sources */,
-				25D1B67128B519E9002D3B6C /* _rder_ontrol.xcdatamodeld in Sources */,
+				25D1B67128B519E9002D3B6C /* OrderControl.xcdatamodeld in Sources */,
 				25D1B66928B519E9002D3B6C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,7 +337,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DWMGJ928Y5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "ОrderСontrol/Info.plist";
+				INFOPLIST_FILE = "ОrderСontrol/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -304,7 +348,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "JR.-rder-ontrol";
+				PRODUCT_BUNDLE_IDENTIFIER = JR.OrderControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -321,7 +365,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DWMGJ928Y5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "ОrderСontrol/Info.plist";
+				INFOPLIST_FILE = "ОrderСontrol/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -332,7 +376,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "JR.-rder-ontrol";
+				PRODUCT_BUNDLE_IDENTIFIER = JR.OrderControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -364,13 +408,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		25D1B66F28B519E9002D3B6C /* _rder_ontrol.xcdatamodeld */ = {
+		25D1B66F28B519E9002D3B6C /* OrderControl.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				25D1B67028B519E9002D3B6C /* _rder_ontrol.xcdatamodel */,
 			);
 			currentVersion = 25D1B67028B519E9002D3B6C /* _rder_ontrol.xcdatamodel */;
-			path = _rder_ontrol.xcdatamodeld;
+			path = OrderControl.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
