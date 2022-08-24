@@ -24,8 +24,8 @@
     </entity>
     <elements>
         <element name="Customer" positionX="-137.5078125" positionY="-140.41015625" width="128" height="88"/>
-        <element name="Servise" positionX="303.48046875" positionY="-138.90625" width="128" height="88"/>
         <element name="Order" positionX="27.24609375" positionY="-45.79296875" width="128" height="118"/>
         <element name="RowOfOrder" positionX="219.40625" positionY="40.8671875" width="128" height="88"/>
+        <element name="Servise" positionX="303.48046875" positionY="-138.90625" width="128" height="88"/>
     </elements>
 </model>

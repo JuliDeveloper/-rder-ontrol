@@ -34,18 +34,16 @@ class StorageManager {
     }
     
     // Извление записей
-    func fetchCustomer(_ completion: (Result<[NSManagedObject], Error>) -> Void) {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Customer")
+    func fetchCustomer(_ completion: (Result<[Customer], Error>) -> Void) {
+        let fetchRequest = Customer.fetchRequest()
         
         do {
-            let results = try context.fetch(fetchRequest) as! [NSManagedObject]
+            let results = try context.fetch(fetchRequest)
             completion(.success(results))
         } catch let error {
             completion(.failure(error))
         }
     }
-
-    
 
     // MARK: - Core Data Saving support
     func saveContext () {
