@@ -16,7 +16,6 @@
 		25D1B69728B64F83002D3B6C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B69628B64F83002D3B6C /* StorageManager.swift */; };
 		25D1B6A528B68C7B002D3B6C /* Extension + UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6A428B68C7B002D3B6C /* Extension + UIButton.swift */; };
 		25D1B6A728B69160002D3B6C /* CustomersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6A628B69160002D3B6C /* CustomersTableViewController.swift */; };
-		25D1B6AA28B692BC002D3B6C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6A928B692BC002D3B6C /* CustomCell.swift */; };
 		25D1B6B328B6ABAA002D3B6C /* Order+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6AB28B6ABAA002D3B6C /* Order+CoreDataClass.swift */; };
 		25D1B6B428B6ABAA002D3B6C /* Order+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6AC28B6ABAA002D3B6C /* Order+CoreDataProperties.swift */; };
 		25D1B6B528B6ABAA002D3B6C /* RowOfOrder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6AD28B6ABAA002D3B6C /* RowOfOrder+CoreDataClass.swift */; };
@@ -39,7 +38,6 @@
 		25D1B69628B64F83002D3B6C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		25D1B6A428B68C7B002D3B6C /* Extension + UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIButton.swift"; sourceTree = "<group>"; };
 		25D1B6A628B69160002D3B6C /* CustomersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersTableViewController.swift; sourceTree = "<group>"; };
-		25D1B6A928B692BC002D3B6C /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		25D1B6AB28B6ABAA002D3B6C /* Order+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataClass.swift"; sourceTree = "<group>"; };
 		25D1B6AC28B6ABAA002D3B6C /* Order+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		25D1B6AD28B6ABAA002D3B6C /* RowOfOrder+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RowOfOrder+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -162,7 +160,6 @@
 		25D1B6A828B69297002D3B6C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				25D1B6A928B692BC002D3B6C /* CustomCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,7 +239,6 @@
 				25D1B66B28B519E9002D3B6C /* MainViewController.swift in Sources */,
 				25D1B6A528B68C7B002D3B6C /* Extension + UIButton.swift in Sources */,
 				25D1B6B928B6ABAA002D3B6C /* Servise+CoreDataClass.swift in Sources */,
-				25D1B6AA28B692BC002D3B6C /* CustomCell.swift in Sources */,
 				25D1B6BA28B6ABAA002D3B6C /* Servise+CoreDataProperties.swift in Sources */,
 				25D1B66728B519E9002D3B6C /* AppDelegate.swift in Sources */,
 				25D1B6B328B6ABAA002D3B6C /* Order+CoreDataClass.swift in Sources */,
