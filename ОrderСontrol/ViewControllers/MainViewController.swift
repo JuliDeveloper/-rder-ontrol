@@ -11,48 +11,28 @@ final class MainViewController: UIViewController {
     
     private lazy var customerButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Customer", for: .normal)
-        button.setImage(UIImage(systemName: "person.fill"), for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-        button.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.layer.cornerRadius = 10
+        button.config("Customer", "person.fill")
         button.addTarget(self, action: #selector(openCustomerController), for: .touchUpInside)
         return button
     }()
     
     private lazy var serviseButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Servise", for: .normal)
-        button.setImage(UIImage(systemName: "tray.full.fill"), for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-        button.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.layer.cornerRadius = 10
+        button.config("Servise", "tray.full.fill")
         button.addTarget(self, action: #selector(openServiceController), for: .touchUpInside)
         return button
     }()
     
     private lazy var documentsButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Documents", for: .normal)
-        button.setImage(UIImage(systemName: "folder.fill"), for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-        button.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.layer.cornerRadius = 10
+        button.config("Documents", "folder.fill")
         button.addTarget(self, action: #selector(openDocumentsController), for: .touchUpInside)
         return button
     }()
     
     private lazy var ordersReportButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Orders report", for: .normal)
-        button.setImage(UIImage(systemName: "list.bullet.below.rectangle"), for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-        button.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.layer.cornerRadius = 10
+        button.config("Orders report", "list.bullet.below.rectangle")
         button.addTarget(self, action: #selector(openOrdersReportController), for: .touchUpInside)
         return button
     }()
@@ -83,18 +63,6 @@ final class MainViewController: UIViewController {
             stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
-        
-        customerButton.translatesAutoresizingMaskIntoConstraints = false
-        customerButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        serviseButton.translatesAutoresizingMaskIntoConstraints = false
-        serviseButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        documentsButton.translatesAutoresizingMaskIntoConstraints = false
-        documentsButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        ordersReportButton.translatesAutoresizingMaskIntoConstraints = false
-        ordersReportButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
     @objc private func openCustomerController() {}

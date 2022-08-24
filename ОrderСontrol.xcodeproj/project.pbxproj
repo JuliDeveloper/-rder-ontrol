@@ -18,6 +18,7 @@
 		25D1B69D28B66E3B002D3B6C /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B69C28B66E3B002D3B6C /* Order.swift */; };
 		25D1B69F28B66E5B002D3B6C /* Servise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B69E28B66E5B002D3B6C /* Servise.swift */; };
 		25D1B6A128B66E7F002D3B6C /* RowOfOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6A028B66E7F002D3B6C /* RowOfOrder.swift */; };
+		25D1B6A528B68C7B002D3B6C /* Extension + UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6A428B68C7B002D3B6C /* Extension + UIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		25D1B69C28B66E3B002D3B6C /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		25D1B69E28B66E5B002D3B6C /* Servise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servise.swift; sourceTree = "<group>"; };
 		25D1B6A028B66E7F002D3B6C /* RowOfOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowOfOrder.swift; sourceTree = "<group>"; };
+		25D1B6A428B68C7B002D3B6C /* Extension + UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIButton.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			children = (
 				25D1B68128B51D52002D3B6C /* ViewControllers */,
 				25D1B69528B64F6B002D3B6C /* Servises */,
+				25D1B6A328B68C5C002D3B6C /* Extensions */,
 				25D1B68228B51D69002D3B6C /* Storyboards */,
 				25D1B68028B51D31002D3B6C /* App */,
 				25D1B68328B51D75002D3B6C /* Resourses */,
@@ -128,6 +131,14 @@
 				25D1B69E28B66E5B002D3B6C /* Servise.swift */,
 			);
 			path = Servises;
+			sourceTree = "<group>";
+		};
+		25D1B6A328B68C5C002D3B6C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				25D1B6A428B68C7B002D3B6C /* Extension + UIButton.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25D1B66B28B519E9002D3B6C /* MainViewController.swift in Sources */,
+				25D1B6A528B68C7B002D3B6C /* Extension + UIButton.swift in Sources */,
 				25D1B69F28B66E5B002D3B6C /* Servise.swift in Sources */,
 				25D1B66728B519E9002D3B6C /* AppDelegate.swift in Sources */,
 				25D1B69728B64F83002D3B6C /* StorageManager.swift in Sources */,
