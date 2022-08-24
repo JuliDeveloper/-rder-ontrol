@@ -24,6 +24,7 @@
 		25D1B6B828B6ABAA002D3B6C /* Customer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6B028B6ABAA002D3B6C /* Customer+CoreDataProperties.swift */; };
 		25D1B6B928B6ABAA002D3B6C /* Servise+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6B128B6ABAA002D3B6C /* Servise+CoreDataClass.swift */; };
 		25D1B6BA28B6ABAA002D3B6C /* Servise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6B228B6ABAA002D3B6C /* Servise+CoreDataProperties.swift */; };
+		25D1B6BD28B6B213002D3B6C /* CustomerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6BC28B6B213002D3B6C /* CustomerDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		25D1B6B028B6ABAA002D3B6C /* Customer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Customer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		25D1B6B128B6ABAA002D3B6C /* Servise+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Servise+CoreDataClass.swift"; sourceTree = "<group>"; };
 		25D1B6B228B6ABAA002D3B6C /* Servise+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Servise+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		25D1B6BC28B6B213002D3B6C /* CustomerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			children = (
 				25D1B66A28B519E9002D3B6C /* MainViewController.swift */,
 				25D1B6A628B69160002D3B6C /* CustomersTableViewController.swift */,
+				25D1B6BC28B6B213002D3B6C /* CustomerDetails.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				25D1B6B628B6ABAA002D3B6C /* RowOfOrder+CoreDataProperties.swift in Sources */,
 				25D1B6A728B69160002D3B6C /* CustomersTableViewController.swift in Sources */,
 				25D1B6B728B6ABAA002D3B6C /* Customer+CoreDataClass.swift in Sources */,
+				25D1B6BD28B6B213002D3B6C /* CustomerDetails.swift in Sources */,
 				25D1B6B528B6ABAA002D3B6C /* RowOfOrder+CoreDataClass.swift in Sources */,
 				25D1B67128B519E9002D3B6C /* OrderControl.xcdatamodeld in Sources */,
 			);

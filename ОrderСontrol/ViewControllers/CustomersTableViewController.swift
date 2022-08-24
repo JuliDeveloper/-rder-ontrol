@@ -18,6 +18,8 @@ class CustomersTableViewController: UITableViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         title = "Customers"
+        tableView.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        navigationController?.navigationBar.prefersLargeTitles = false
         
         fetchData()
         tableView.reloadData()
@@ -37,7 +39,13 @@ class CustomersTableViewController: UITableViewController {
         content.text = customer.name
         content.image = UIImage(systemName: "dote.square")
         cell.contentConfiguration = content
+        cell.selectionStyle = .none
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailsVC = CustomerDetails()
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
     
      private func fetchData() {
