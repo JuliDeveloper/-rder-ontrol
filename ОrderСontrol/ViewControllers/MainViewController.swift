@@ -65,7 +65,10 @@ final class MainViewController: UIViewController {
         ])
     }
     
-    @objc private func openCustomerController() {}
+    @objc private func openCustomerController() {
+        let customerVC = CustomersTableViewController()
+        navigationController?.pushViewController(customerVC, animated: true)
+    }
     
     @objc private func openServiceController() {}
 
