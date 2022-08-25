@@ -11,7 +11,9 @@ import UIKit
 extension UIStackView {
     func config() {
         axis = .vertical
+        alignment = .fill
         distribution = .fill
         spacing = 8
+        translatesAutoresizingMaskIntoConstraints = false
     }
 }

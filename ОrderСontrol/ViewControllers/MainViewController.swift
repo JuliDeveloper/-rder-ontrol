@@ -43,7 +43,10 @@ final class MainViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         setUpStack()
     }
-    
+}
+
+//MARK: - Private func
+extension MainViewController {
     private func setUpStack() {
         let stack = UIStackView(arrangedSubviews: [customerButton,
                                                    serviseButton,
@@ -76,4 +79,3 @@ final class MainViewController: UIViewController {
 
     @objc private func openOrdersReportController() {}
 }
-

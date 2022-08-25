@@ -37,7 +37,7 @@ class CustomerDetails: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         setUpNavigationBar()
-        setUpStack()
+        setUpStacks()
     }
 }
 
@@ -56,7 +56,7 @@ extension CustomerDetails {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
     }
     
-    private func setUpStack() {
+    private func setUpStacks() {
         let nameStack = UIStackView(arrangedSubviews: [nameLable, infoLable])
         let infoStack = UIStackView(arrangedSubviews: [nameTextField, infoTextField])
         
@@ -71,7 +71,6 @@ extension CustomerDetails {
     }
 
     private func setUpConstraint(for stack: UIStackView) {
-        stack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             stack.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
             stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),

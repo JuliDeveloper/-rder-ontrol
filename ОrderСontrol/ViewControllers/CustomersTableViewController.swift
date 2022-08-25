@@ -24,8 +24,10 @@ class CustomersTableViewController: UITableViewController {
         fetchData()
         tableView.reloadData()
     }
-    
-    // MARK: - Table view data source
+}
+
+//MARK: - Table view data source
+extension CustomersTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         customers.count
     }
@@ -47,15 +49,19 @@ class CustomersTableViewController: UITableViewController {
         let detailsVC = CustomerDetails()
         navigationController?.pushViewController(detailsVC, animated: true)
     }
-    
-     private func fetchData() {
-         StorageManager.shared.fetchCustomer { result in
-             switch result {
-             case .success(let customers):
-                 self.customers = customers
-             case .failure(let error):
-                 print(error)
-             }
-         }
-     }
+}
+
+
+//MARK: - Private func
+extension CustomersTableViewController {
+    private func fetchData() {
+        StorageManager.shared.fetchCustomer { result in
+            switch result {
+            case .success(let customers):
+                self.customers = customers
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
