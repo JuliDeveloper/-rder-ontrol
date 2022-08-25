@@ -37,7 +37,7 @@ class CustomerDetails: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         setUpNavigationBar()
-        setUpVerticalStack()
+        setUpStack()
     }
     
     private func setUpNavigationBar() {
@@ -65,25 +65,24 @@ class CustomerDetails: UIViewController {
     private func setUpStack(with textFieldss: [UITextField]) -> UIStackView {
         let stack = UIStackView(arrangedSubviews: textFieldss)
         stack.axis = .vertical
-        stack.alignment = .fill
-        stack.distribution = .fillEqually
+        stack.distribution = .fill
         stack.spacing = 8
         return stack
     }
     
-    private func setUpVerticalStack() {
+    private func setUpStack() {
         let nameStack: UIStackView = setUpStack(with: [nameLable, infoLable])
         let infoStack: UIStackView = setUpStack(with: [nameTextField, infoTextField])
 
         let stack = UIStackView(arrangedSubviews: [nameStack, infoStack])
         stack.axis = .horizontal
         stack.alignment = .fill
-        stack.distribution = .fillEqually
-        stack.spacing = 10
+        stack.distribution = .fill
+        stack.spacing = 8
         view.addSubview(stack)
         setUpConstraint(for: stack)
     }
-    
+
     private func setUpConstraint(for stack: UIStackView) {
         stack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
