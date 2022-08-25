@@ -39,7 +39,10 @@ class CustomerDetails: UIViewController {
         setUpNavigationBar()
         setUpStack()
     }
-    
+}
+
+//MARK: - Private func
+extension CustomerDetails {
     private func setUpNavigationBar() {
         title = "Customer"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -53,32 +56,16 @@ class CustomerDetails: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
     }
     
-    private func setUpStack(with lables: [UILabel]) -> UIStackView {
-        let stack = UIStackView(arrangedSubviews: lables)
-        stack.axis = .vertical
-        stack.alignment = .fill
-        stack.distribution = .fillEqually
-        stack.spacing = 8
-        return stack
-    }
-    
-    private func setUpStack(with textFieldss: [UITextField]) -> UIStackView {
-        let stack = UIStackView(arrangedSubviews: textFieldss)
-        stack.axis = .vertical
-        stack.distribution = .fill
-        stack.spacing = 8
-        return stack
-    }
-    
     private func setUpStack() {
-        let nameStack: UIStackView = setUpStack(with: [nameLable, infoLable])
-        let infoStack: UIStackView = setUpStack(with: [nameTextField, infoTextField])
-
+        let nameStack = UIStackView(arrangedSubviews: [nameLable, infoLable])
+        let infoStack = UIStackView(arrangedSubviews: [nameTextField, infoTextField])
+        
+        nameStack.config()
+        infoStack.config()
+        
         let stack = UIStackView(arrangedSubviews: [nameStack, infoStack])
+        stack.config()
         stack.axis = .horizontal
-        stack.alignment = .fill
-        stack.distribution = .fill
-        stack.spacing = 8
         view.addSubview(stack)
         setUpConstraint(for: stack)
     }

@@ -27,6 +27,7 @@
 		25D1B6BD28B6B213002D3B6C /* CustomerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6BC28B6B213002D3B6C /* CustomerDetails.swift */; };
 		25D1B6BF28B6B85A002D3B6C /* Extensin + UILable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6BE28B6B85A002D3B6C /* Extensin + UILable.swift */; };
 		25D1B6C128B6BB3F002D3B6C /* Extension + UITextFietld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6C028B6BB3F002D3B6C /* Extension + UITextFietld.swift */; };
+		25D1B6C428B7F514002D3B6C /* Extension + UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6C328B7F514002D3B6C /* Extension + UIStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		25D1B6BC28B6B213002D3B6C /* CustomerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetails.swift; sourceTree = "<group>"; };
 		25D1B6BE28B6B85A002D3B6C /* Extensin + UILable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensin + UILable.swift"; sourceTree = "<group>"; };
 		25D1B6C028B6BB3F002D3B6C /* Extension + UITextFietld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITextFietld.swift"; sourceTree = "<group>"; };
+		25D1B6C328B7F514002D3B6C /* Extension + UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIStackView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				25D1B6A428B68C7B002D3B6C /* Extension + UIButton.swift */,
 				25D1B6BE28B6B85A002D3B6C /* Extensin + UILable.swift */,
 				25D1B6C028B6BB3F002D3B6C /* Extension + UITextFietld.swift */,
+				25D1B6C328B7F514002D3B6C /* Extension + UIStackView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				25D1B6BA28B6ABAA002D3B6C /* Servise+CoreDataProperties.swift in Sources */,
 				25D1B66728B519E9002D3B6C /* AppDelegate.swift in Sources */,
 				25D1B6B328B6ABAA002D3B6C /* Order+CoreDataClass.swift in Sources */,
+				25D1B6C428B7F514002D3B6C /* Extension + UIStackView.swift in Sources */,
 				25D1B69728B64F83002D3B6C /* StorageManager.swift in Sources */,
 				25D1B6B828B6ABAA002D3B6C /* Customer+CoreDataProperties.swift in Sources */,
 				25D1B6B628B6ABAA002D3B6C /* RowOfOrder+CoreDataProperties.swift in Sources */,
