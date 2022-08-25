@@ -9,6 +9,8 @@ import UIKit
 
 class CustomerDetails: UIViewController {
     
+    var customer: Customer?
+    
     private let nameLable: UILabel = {
         let lable = UILabel()
         lable.config("Name")
@@ -36,6 +38,12 @@ class CustomerDetails: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        
+        if let customer = customer {
+            nameTextField.text = customer.name
+            infoTextField.text = customer.info
+        }
+        
         setUpNavigationBar()
         setUpStacks()
     }
@@ -48,7 +56,7 @@ extension CustomerDetails {
         
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save,
                                          target: self,
-                                         action: #selector(saveCustomer))
+                                         action: #selector(save))
         navigationItem.rightBarButtonItem = saveButton
         saveButton.tintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         
@@ -81,8 +89,30 @@ extension CustomerDetails {
         ])
     }
     
-    @objc private func saveCustomer() {
-        navigationController?.popViewController(animated: true)
+    private func saveCustomer() -> Bool {
+        if nameTextField.text!.isEmpty {
+            let alert = UIAlertController(title: "Error", message: "Enter you name", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+            return false
+        }
+        
+        if customer == nil {
+            customer = Customer()
+        }
+        
+        if let customer = customer {
+            customer.name = nameTextField.text
+            customer.info = infoTextField.text
+            StorageManager.shared.saveContext()
+        }
+        return true
+    }
+    
+    @objc private func save() {
+        if saveCustomer() {
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     @objc private func cancel() {
