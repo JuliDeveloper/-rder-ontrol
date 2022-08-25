@@ -15,12 +15,12 @@ class CustomersTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Customers"
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
-        title = "Customers"
         tableView.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
-        navigationController?.navigationBar.prefersLargeTitles = false
         
+        setUpButton()
         fetchData()
         tableView.reloadData()
     }
@@ -32,14 +32,12 @@ extension CustomersTableViewController {
         customers.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         let customer = customers[indexPath.row]
         
         var content = cell.defaultContentConfiguration()
         content.text = customer.name
-        content.image = UIImage(systemName: "dote.square")
         cell.contentConfiguration = content
         cell.selectionStyle = .none
         return cell
@@ -51,9 +49,15 @@ extension CustomersTableViewController {
     }
 }
 
-
 //MARK: - Private func
 extension CustomersTableViewController {
+    private func setUpButton() {
+        let backButton = UIBarButtonItem()
+        backButton.title = "Back"
+        backButton.tintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
+    
     private func fetchData() {
         StorageManager.shared.fetchCustomer { result in
             switch result {

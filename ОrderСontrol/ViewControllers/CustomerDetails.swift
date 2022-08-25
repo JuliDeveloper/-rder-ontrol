@@ -45,15 +45,18 @@ class CustomerDetails: UIViewController {
 extension CustomerDetails {
     private func setUpNavigationBar() {
         title = "Customer"
-        navigationController?.navigationBar.prefersLargeTitles = true
-            
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .save,
-            target: self,
-            action: #selector(saveCustomer)
-        )
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .save,
+                                         target: self,
+                                         action: #selector(saveCustomer))
+        navigationItem.rightBarButtonItem = saveButton
+        saveButton.tintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel,
+                                           target: self,
+                                           action: #selector(cancel))
+        navigationItem.leftBarButtonItem = cancelButton
+        cancelButton.tintColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
     }
     
     private func setUpStacks() {
@@ -72,14 +75,14 @@ extension CustomerDetails {
 
     private func setUpConstraint(for stack: UIStackView) {
         NSLayoutConstraint.activate([
-            stack.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+            stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
     }
     
     @objc private func saveCustomer() {
-        
+        navigationController?.popViewController(animated: true)
     }
     
     @objc private func cancel() {
