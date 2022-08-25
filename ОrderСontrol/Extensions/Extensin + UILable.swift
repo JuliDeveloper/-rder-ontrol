@@ -11,6 +11,6 @@ extension UILabel {
     func config(_ title: String) {
         text = title
         tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        font = UIFont.boldSystemFont(ofSize: 14)
+        font = UIFont.systemFont(ofSize: 17)
     }
 }

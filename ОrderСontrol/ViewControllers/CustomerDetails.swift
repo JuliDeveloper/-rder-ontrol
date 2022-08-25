@@ -53,30 +53,41 @@ class CustomerDetails: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
     }
     
-    private func setUpHorizontalStack(with lable: UILabel, and textField: UITextField) {
-        let stack = UIStackView(arrangedSubviews: [lable, textField])
-        stack.axis = .horizontal
+    private func setUpStack(with lables: [UILabel]) -> UIStackView {
+        let stack = UIStackView(arrangedSubviews: lables)
+        stack.axis = .vertical
+        stack.alignment = .fill
         stack.distribution = .fillEqually
-        stack.spacing = 20
-        
-        view.addSubview(stack)
-        setUpConstraint(for: stack)
+        stack.spacing = 8
+        return stack
+    }
+    
+    private func setUpStack(with textFieldss: [UITextField]) -> UIStackView {
+        let stack = UIStackView(arrangedSubviews: textFieldss)
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fillEqually
+        stack.spacing = 8
+        return stack
     }
     
     private func setUpVerticalStack() {
-        let nameStack: UIStackView = setUpHorizontalStack(with: nameLable, and: nameTextField)
-        let infoStack: UIStackView = setUpHorizontalStack(with: infoLable, and: infoTextField)
-        
-        let stack = UIStackView(arrangedSubviews: nameStack, infoStack)
-        
-        
-        stack.addSubview(stack)
+        let nameStack: UIStackView = setUpStack(with: [nameLable, infoLable])
+        let infoStack: UIStackView = setUpStack(with: [nameTextField, infoTextField])
+
+        let stack = UIStackView(arrangedSubviews: [nameStack, infoStack])
+        stack.axis = .horizontal
+        stack.alignment = .fill
+        stack.distribution = .fillEqually
+        stack.spacing = 10
+        view.addSubview(stack)
+        setUpConstraint(for: stack)
     }
     
     private func setUpConstraint(for stack: UIStackView) {
         stack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stack.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
+            stack.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
             stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
