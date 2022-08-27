@@ -11,6 +11,7 @@ private let reuseIdentifier = "cell"
 
 class CustomersTableViewController: UITableViewController {
     
+    private let context = StorageManager.shared.context
     private var customers: [Customer] = []
     
     override func viewDidLoad() {
@@ -47,9 +48,11 @@ extension CustomersTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let customer = customers[indexPath.row]
         
-        let detailsVC = CustomerDetails()
-        navigationController?.pushViewController(detailsVC, animated: true)
-        detailsVC.customer = customer
+        showAlertController(with: "Edit Customer",
+                            and: "Change name or info",
+                            and: customer.name ?? "",
+                            and: customer.info ?? "",
+                            editCustomer)
     }
 }
 
@@ -75,7 +78,7 @@ extension CustomersTableViewController {
         backButton.tintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(presentCustomerDetails))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewCustomer))
         addButton.tintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         navigationItem.rightBarButtonItem = addButton
     }
@@ -90,10 +93,74 @@ extension CustomersTableViewController {
             }
         }
     }
+
+    @objc private func addNewCustomer() {
+        showAlertController(with: "New Customer",
+                            and: "Add name and info",
+                            and: "",
+                            and: "",
+                            saveNewCustomer)
+    }
     
-    @objc private func presentCustomerDetails(sender: AnyObject?) {
-        let detailsVC = CustomerDetails()
-        navigationController?.pushViewController(detailsVC, animated: true)
-        detailsVC.customer = sender as? Customer
+    private func saveNewCustomer(_ nameCustomer: String, _ infoCustomer: String) {
+        let customer = Customer(context: context)
+        
+        customer.name = nameCustomer
+        customer.info = infoCustomer
+        
+        customers.append(customer)
+        
+        let cellIndex = IndexPath(row: customers.count - 1, section: 0)
+        tableView.insertRows(at: [cellIndex], with: .automatic)
+        
+        StorageManager.shared.saveContext()
+    }
+    
+    private func editCustomer(_ newName: String, _ newInfo: String) {
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        customers[indexPath.row].name = newName
+        customers[indexPath.row].info = newInfo
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+        
+        StorageManager.shared.saveContext()
+    }
+}
+
+extension CustomersTableViewController {
+    private func showAlertController(
+        with title: String,
+        and message: String,
+        and nameTextField: String,
+        and infoTextField: String,
+        _ funcActions: @escaping (String, String) -> ()) {
+            
+            let alert = UIAlertController(title: title, message:
+                                            message,
+                                          preferredStyle: .alert)
+            let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+                guard let nameCustomer = alert.textFields?.first?.text,
+                      !nameCustomer.isEmpty else {
+                    return
+                }
+                guard let infoCustomer = alert.textFields?.last?.text,
+                      !infoCustomer.isEmpty else {
+                    return
+                }
+                funcActions(nameCustomer, infoCustomer)
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
+            
+            alert.addAction(saveAction)
+            alert.addAction(cancelAction)
+            alert.addTextField { nameTF in
+                nameTF.placeholder = "New name"
+                nameTF.text = nameTextField
+            }
+            alert.addTextField { infoTF in
+                infoTF.placeholder = "Enter info"
+                infoTF.text = infoTextField
+            }
+            
+            present(alert, animated: true)
     }
 }

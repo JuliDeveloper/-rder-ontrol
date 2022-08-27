@@ -11,6 +11,7 @@ class CustomerDetails: UIViewController {
     
     var customer: Customer?
     
+    private let context = StorageManager.shared.context
     private let nameLable: UILabel = {
         let lable = UILabel()
         lable.config("Name")
@@ -89,30 +90,73 @@ extension CustomerDetails {
         ])
     }
     
-    private func saveCustomer() -> Bool {
+    private func validateName() {
         if nameTextField.text!.isEmpty {
             let alert = UIAlertController(title: "Error", message: "Enter you name", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             present(alert, animated: true)
-            return false
         }
-        
-        if customer == nil {
-            customer = Customer()
-        }
-        
-        if let customer = customer {
-            customer.name = nameTextField.text
-            customer.info = infoTextField.text
-            StorageManager.shared.saveContext()
-        }
-        return true
     }
     
+//    private func saveCustomer() -> Bool {
+//
+//        let newCustomer = Customer(context: context)
+//        let customersVC = CustomersTableViewController()
+//        guard let tableView = customersVC.tableView else { return false }
+//        //var customers = customersVC.customers
+//
+//        let newName = nameTextField.text ?? ""
+//        let newInfo = infoTextField.text ?? ""
+//
+//        if customer == nil {
+//            newCustomer.name = newName
+//            newCustomer.info = newInfo
+//            customers.append(newCustomer)
+//            StorageManager.shared.saveContext()
+//            let newCellIndexPath = IndexPath(row: customers.count - 1, section: 0)
+//            tableView.insertRows(at: [newCellIndexPath], with: .automatic)
+//            tableView.reloadData()
+//        }
+//        return true
+//    }
+//
+//    private func editCustomer(newName: String, newInfo: String) -> Bool {
+//        let customersVC = CustomersTableViewController()
+//        guard let tableView = customersVC.tableView else { return false }
+//        //var customers = customersVC.customers
+//
+//        guard let currentIndexPath = tableView.indexPathForSelectedRow else { return false }
+//
+//        if let customer = customer {
+//            customer.name = nameTextField.text
+//            customer.info = infoTextField.text
+//
+//            StorageManager.shared.saveContext()
+//        }
+//        return true
+//    }
+//
+//    private func redrawTable() {
+//        let customersVC = CustomersTableViewController()
+//        guard let tableView = customersVC.tableView else { return }
+//        var customers = customersVC.customers
+//        guard let customer = customer else { return }
+//
+//        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+//            customers[selectedIndexPath.row] = customer
+//            tableView.reloadRows(at: [selectedIndexPath], with: .fade)
+//        } else {
+//            let newIndexPath = IndexPath(row: customers.count - 1, section: 0)
+//            customers.append(customer)
+//            tableView.insertRows(at: [newIndexPath], with: .automatic)
+//        }
+//    }
+//
     @objc private func save() {
-        if saveCustomer() {
-            navigationController?.popViewController(animated: true)
-        }
+//        if saveCustomer() {
+//            redrawTable()
+//            navigationController?.popViewController(animated: true)
+//        }
     }
     
     @objc private func cancel() {
