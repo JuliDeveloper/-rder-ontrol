@@ -39,6 +39,16 @@ extension ServiseTableViewController {
     }
 }
 
+// MARK: - Private func's
 extension ServiseTableViewController {
-    
+    private func fetchServise() {
+        StorageManager.shared.fetchServise { result in
+            switch result {
+            case .success(let servicies):
+                self.servicies = servicies
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
