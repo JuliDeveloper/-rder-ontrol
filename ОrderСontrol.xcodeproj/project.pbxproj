@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		253B0FC928BAA76D0027943F /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FC828BAA76D0027943F /* Extension + UIViewController.swift */; };
-		253B0FCB28BAA8FD0027943F /* ServiseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FCA28BAA8FD0027943F /* ServiseTableViewController.swift */; };
+		253B0FCB28BAA8FD0027943F /* ServicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FCA28BAA8FD0027943F /* ServicesTableViewController.swift */; };
 		25D1B66728B519E9002D3B6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66628B519E9002D3B6C /* AppDelegate.swift */; };
 		25D1B66B28B519E9002D3B6C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66A28B519E9002D3B6C /* MainViewController.swift */; };
 		25D1B67128B519E9002D3B6C /* OrderControl.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66F28B519E9002D3B6C /* OrderControl.xcdatamodeld */; };
@@ -33,7 +33,7 @@
 
 /* Begin PBXFileReference section */
 		253B0FC828BAA76D0027943F /* Extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
-		253B0FCA28BAA8FD0027943F /* ServiseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiseTableViewController.swift; sourceTree = "<group>"; };
+		253B0FCA28BAA8FD0027943F /* ServicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesTableViewController.swift; sourceTree = "<group>"; };
 		25D1B66328B519E9002D3B6C /* ОrderСontrol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ОrderСontrol.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D1B66628B519E9002D3B6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25D1B66A28B519E9002D3B6C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 			children = (
 				25D1B66A28B519E9002D3B6C /* MainViewController.swift */,
 				25D1B6A628B69160002D3B6C /* CustomersTableViewController.swift */,
-				253B0FCA28BAA8FD0027943F /* ServiseTableViewController.swift */,
+				253B0FCA28BAA8FD0027943F /* ServicesTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -267,7 +267,7 @@
 				253B0FC928BAA76D0027943F /* Extension + UIViewController.swift in Sources */,
 				25D1B6B328B6ABAA002D3B6C /* Order+CoreDataClass.swift in Sources */,
 				25D1B6C428B7F514002D3B6C /* Extension + UIStackView.swift in Sources */,
-				253B0FCB28BAA8FD0027943F /* ServiseTableViewController.swift in Sources */,
+				253B0FCB28BAA8FD0027943F /* ServicesTableViewController.swift in Sources */,
 				25D1B69728B64F83002D3B6C /* StorageManager.swift in Sources */,
 				25D1B6B828B6ABAA002D3B6C /* Customer+CoreDataProperties.swift in Sources */,
 				25D1B6B628B6ABAA002D3B6C /* RowOfOrder+CoreDataProperties.swift in Sources */,
