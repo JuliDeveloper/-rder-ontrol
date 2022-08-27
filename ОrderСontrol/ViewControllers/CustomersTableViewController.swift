@@ -26,7 +26,7 @@ class CustomersTableViewController: UITableViewController {
     }
 }
 
-//MARK: - Table view data source
+//MARK: - Table view Data source
 extension CustomersTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         customers.count
@@ -50,6 +50,20 @@ extension CustomersTableViewController {
         let detailsVC = CustomerDetails()
         navigationController?.pushViewController(detailsVC, animated: true)
         detailsVC.customer = customer
+    }
+}
+
+//MARK: - Table View Delegate
+extension CustomersTableViewController {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+        let customer = customers[indexPath.row]
+        
+        if editingStyle == .delete {
+            customers.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            StorageManager.shared.deleteObject(object: customer)
+        }
     }
 }
 

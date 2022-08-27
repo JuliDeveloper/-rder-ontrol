@@ -56,6 +56,11 @@ class StorageManager {
             }
         }
     }
+    
+    func deleteObject(object: NSManagedObject) {
+        context.delete(object)
+        saveContext()
+    }
 
     private init() {}
 }
