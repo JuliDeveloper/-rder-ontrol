@@ -42,6 +42,7 @@ extension ServicesTableViewController {
         content.text = service.name
         content.secondaryText = service.info
         cell.contentConfiguration = content
+        cell.selectionStyle = .none
         
         return cell
     }
