@@ -47,6 +47,26 @@ extension ServicesTableViewController {
     }
 }
 
+// MARK: - Table view delegate
+extension ServicesTableViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let service = services[indexPath.row]
+        
+        showAlertController(with: "Edit service", and: "Change title or name", and: service.name ?? "", and: service.info ?? "", editService)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let service = services[indexPath.row]
+        
+        if editingStyle == .delete {
+            services.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            StorageManager.shared.deleteObject(object: service)
+        }
+    }
+}
+
 // MARK: - Private func's
 extension ServicesTableViewController {
     private func fetchServise() {
@@ -89,6 +109,17 @@ extension ServicesTableViewController {
         
         let cellIndex = IndexPath(row: services.count - 1, section: 0)
         tableView.insertRows(at: [cellIndex], with: .automatic)
+        
+        StorageManager.shared.saveContext()
+    }
+    
+    private func editService(_ newTitle: String, _ newInfo: String) {
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        
+        services[indexPath.row].name = newTitle
+        services[indexPath.row].info = newInfo
+        
+        tableView.reloadRows(at: [indexPath], with: .automatic)
         
         StorageManager.shared.saveContext()
     }
