@@ -10,6 +10,8 @@ import UIKit
 private let reuseIdentifier = "cell"
 
 class ServiseTableViewController: UITableViewController {
+    
+    private var servicies: [Servise] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,14 +22,19 @@ class ServiseTableViewController: UITableViewController {
 // MARK: - Table view data source
 extension ServiseTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        servicies.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-
-
+        let service = servicies[indexPath.row]
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = service.name
+        content.text = service.info
+        cell.contentConfiguration = content
+        
         return cell
     }
 }
