@@ -44,6 +44,17 @@ class StorageManager {
             completion(.failure(error))
         }
     }
+    
+    func fetchServise(_ completion: (Result<[Servise], Error>) -> Void) {
+        let fetchRequest = Servise.fetchRequest()
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            completion(.success(results))
+        } catch let error {
+            completion(.failure(error))
+        }
+    }
 
     // MARK: - Core Data Saving support
     func saveContext () {
