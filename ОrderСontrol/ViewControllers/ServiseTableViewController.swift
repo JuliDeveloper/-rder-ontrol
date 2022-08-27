@@ -15,7 +15,7 @@ class ServiseTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpButtons()
     }
 }
 
@@ -50,5 +50,28 @@ extension ServiseTableViewController {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    private func setUpButtons() {
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewServise))
+        addButton.tintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        navigationItem.rightBarButtonItem = addButton
+        
+        let backButton = UIBarButtonItem()
+        backButton.title = "Back"
+        backButton.tintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
+    
+    @objc private func addNewServise() {
+        showAlertController(with: "Add new servise",
+                            and: "Add title and info",
+                            and: "Title",
+                            and: "Info",
+                            saveNewServise)
+    }
+    
+    private func saveNewServise(_ title: String, _ info: String) {
+        
     }
 }
