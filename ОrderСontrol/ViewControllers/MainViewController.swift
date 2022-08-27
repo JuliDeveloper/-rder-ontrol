@@ -73,7 +73,10 @@ extension MainViewController {
         navigationController?.pushViewController(customerVC, animated: true)
     }
     
-    @objc private func openServiceController() {}
+    @objc private func openServiceController() {
+        let serviceVC = ServiseTableViewController()
+        navigationController?.pushViewController(serviceVC, animated: true)
+    }
 
     @objc private func openDocumentsController() {}
 
