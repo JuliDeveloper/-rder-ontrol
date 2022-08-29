@@ -55,6 +55,17 @@ class StorageManager {
             completion(.failure(error))
         }
     }
+    
+    func fetchDocuments(_ completion: (Result<[Order], Error>) -> Void) {
+        let fetchRequest = Order.fetchRequest()
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            completion(.success(result))
+        } catch let error {
+            completion(.failure(error))
+        }
+    }
 
     // MARK: - Core Data Saving support
     func saveContext () {

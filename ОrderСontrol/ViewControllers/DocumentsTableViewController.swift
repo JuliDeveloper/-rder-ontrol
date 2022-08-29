@@ -11,20 +11,24 @@ private let reuseIdentifier = "cell"
 
 class DocumentsTableViewController: UITableViewController {
         
+    var documents: [Order] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Orders"
         tableView.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         
         setUpButtons()
+        fetchData()
+        tableView.reloadData()
     }
 }
 
 // MARK: - Table view data source
 extension DocumentsTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        documents.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,5 +56,16 @@ extension DocumentsTableViewController {
     @objc private func addNewDocuments() {
         let detailsVC = DetailsDocumentsViewController()
         navigationController?.pushViewController(detailsVC, animated: true)
+    }
+    
+    private func fetchData() {
+        StorageManager.shared.fetchDocuments { result in
+            switch result {
+            case .success(let documents):
+                self.documents = documents
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
