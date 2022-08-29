@@ -36,7 +36,15 @@ extension UIViewController {
             alert.addAction(cancelAction)
             alert.addTextField { nameTF in
                 nameTF.placeholder = "New name"
+                saveAction.isEnabled = false
                 nameTF.text = nameTextField
+                NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: nameTF, queue: OperationQueue.main) { notification in
+                    if nameTF.text?.count ?? 0 > 0 {
+                        saveAction.isEnabled = true
+                    } else {
+                        saveAction.isEnabled = false
+                    }
+                }
             }
             alert.addTextField { infoTF in
                 infoTF.placeholder = "Enter info"
