@@ -9,8 +9,11 @@ import UIKit
 
 class DetailsDocumentsViewController: UIViewController {
     
+    //private let context = StorageManager.shared.context
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Order"
         view.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         
         setUpButtons()
