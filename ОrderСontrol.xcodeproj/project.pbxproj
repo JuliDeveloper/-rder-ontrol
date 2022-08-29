@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		253B0FC928BAA76D0027943F /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FC828BAA76D0027943F /* Extension + UIViewController.swift */; };
 		253B0FCB28BAA8FD0027943F /* ServicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FCA28BAA8FD0027943F /* ServicesTableViewController.swift */; };
+		253B0FCD28BD34870027943F /* DocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FCC28BD34870027943F /* DocumentsTableViewController.swift */; };
+		253B0FCF28BD351B0027943F /* DetailsDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FCE28BD351B0027943F /* DetailsDocumentViewController.swift */; };
 		25D1B66728B519E9002D3B6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66628B519E9002D3B6C /* AppDelegate.swift */; };
 		25D1B66B28B519E9002D3B6C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66A28B519E9002D3B6C /* MainViewController.swift */; };
 		25D1B67128B519E9002D3B6C /* OrderControl.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66F28B519E9002D3B6C /* OrderControl.xcdatamodeld */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		253B0FC828BAA76D0027943F /* Extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
 		253B0FCA28BAA8FD0027943F /* ServicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesTableViewController.swift; sourceTree = "<group>"; };
+		253B0FCC28BD34870027943F /* DocumentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewController.swift; sourceTree = "<group>"; };
+		253B0FCE28BD351B0027943F /* DetailsDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDocumentViewController.swift; sourceTree = "<group>"; };
 		25D1B66328B519E9002D3B6C /* ОrderСontrol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ОrderСontrol.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D1B66628B519E9002D3B6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25D1B66A28B519E9002D3B6C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 				25D1B66A28B519E9002D3B6C /* MainViewController.swift */,
 				25D1B6A628B69160002D3B6C /* CustomersTableViewController.swift */,
 				253B0FCA28BAA8FD0027943F /* ServicesTableViewController.swift */,
+				253B0FCC28BD34870027943F /* DocumentsTableViewController.swift */,
+				253B0FCE28BD351B0027943F /* DetailsDocumentViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -259,7 +265,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				25D1B6B428B6ABAA002D3B6C /* Order+CoreDataProperties.swift in Sources */,
+				253B0FCF28BD351B0027943F /* DetailsDocumentViewController.swift in Sources */,
 				25D1B66B28B519E9002D3B6C /* MainViewController.swift in Sources */,
+				253B0FCD28BD34870027943F /* DocumentsTableViewController.swift in Sources */,
 				25D1B6A528B68C7B002D3B6C /* Extension + UIButton.swift in Sources */,
 				25D1B6B928B6ABAA002D3B6C /* Servise+CoreDataClass.swift in Sources */,
 				25D1B6BA28B6ABAA002D3B6C /* Servise+CoreDataProperties.swift in Sources */,
