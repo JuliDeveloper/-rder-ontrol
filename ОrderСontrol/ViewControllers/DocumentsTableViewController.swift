@@ -36,7 +36,18 @@ extension DocumentsTableViewController {
         let order = documents[indexPath.row]
         
         configCell(cell, order)
+        cell.selectionStyle = .none
+        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let order = documents[indexPath.row]
+        if editingStyle == .delete {
+            documents.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            StorageManager.shared.deleteObject(object: order)
+        }
     }
 }
 
