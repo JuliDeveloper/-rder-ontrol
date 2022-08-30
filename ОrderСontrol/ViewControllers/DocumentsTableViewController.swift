@@ -33,9 +33,9 @@ extension DocumentsTableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-
+        let order = documents[indexPath.row]
         
-
+        configCell(cell, order)
         return cell
     }
 }
@@ -67,5 +67,15 @@ extension DocumentsTableViewController {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    private func configCell(_ cell: UITableViewCell, _ order: Order) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy"
+        let nameOfCustomer = order.customer == nil ? "--Unknown--" : order.customer?.name
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = formatter.string(from: order.date ?? Date()) + "\t" + (nameOfCustomer ?? "")
+        cell.contentConfiguration = content
     }
 }
