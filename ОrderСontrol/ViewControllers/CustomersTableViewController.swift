@@ -11,6 +11,9 @@ private let reuseIdentifier = "cell"
 
 class CustomersTableViewController: UITableViewController {
     
+    typealias Select = (Customer?) -> ()
+    var didSelect: Select?
+    
     private let context = StorageManager.shared.context
     private var customers: [Customer] = []
     
@@ -45,19 +48,6 @@ extension CustomersTableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let customer = customers[indexPath.row]
-        
-        showAlertController(with: "Edit Customer",
-                            and: "Change name or info",
-                            and: customer.name ?? "",
-                            and: customer.info ?? "",
-                            editCustomer)
-    }
-}
-
-//MARK: - Table View Delegate
-extension CustomersTableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
         let customer = customers[indexPath.row]
@@ -66,6 +56,24 @@ extension CustomersTableViewController {
             customers.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
             StorageManager.shared.deleteObject(object: customer)
+        }
+    }
+}
+
+//MARK: - Table View Delegate
+extension CustomersTableViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let customer = customers[indexPath.row]
+        
+        if let didSelect = self.didSelect {
+            didSelect(customer)
+            navigationController?.popViewController(animated: true)
+        } else {
+            showAlertController(with: "Edit Customer",
+                                and: "Change name or info",
+                                and: customer.name ?? "",
+                                and: customer.info ?? "",
+                                editCustomer)
         }
     }
 }

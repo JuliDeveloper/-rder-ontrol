@@ -10,7 +10,7 @@ import UIKit
 class DetailsDocumentsViewController: UIViewController {
     
     //private let context = StorageManager.shared.context
-    var order: Order!
+    var order: Order?
     
     let datePicker: UIDatePicker = {
         let picker = UIDatePicker()
@@ -55,6 +55,16 @@ class DetailsDocumentsViewController: UIViewController {
         tf.heightAnchor.constraint(equalToConstant: 31).isActive = true
         return tf
     }()
+    private let switcherMade: UISwitch = {
+        let switcher = UISwitch()
+        switcher.onTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        return switcher
+    }()
+    private let switcherPaid: UISwitch = {
+        let switcher = UISwitch()
+        switcher.onTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        return switcher
+    }()
     lazy var selectCustomerButton: UIButton = {
         let button = UIButton()
         let largeConfig = UIImage.SymbolConfiguration(pointSize: 25)
@@ -79,7 +89,6 @@ class DetailsDocumentsViewController: UIViewController {
         setUpButtons()
         configStackView()
     }
-    
 }
 
 // MARK: - Private funcs
@@ -142,9 +151,7 @@ extension DetailsDocumentsViewController {
     }
     
     private func configStackMade() -> UIStackView {
-        let switcher = UISwitch()
-        switcher.onTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-        let stack = UIStackView(arrangedSubviews: [madeLable, switcher])
+        let stack = UIStackView(arrangedSubviews: [madeLable, switcherMade])
         stack.axis = .horizontal
         stack.distribution = .fill
         stack.alignment = .fill
@@ -153,9 +160,7 @@ extension DetailsDocumentsViewController {
     }
     
     private func configStackPaid() -> UIStackView {
-        let switcher = UISwitch()
-        switcher.onTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-        let stack = UIStackView(arrangedSubviews: [paidLable, switcher])
+        let stack = UIStackView(arrangedSubviews: [paidLable, switcherPaid])
         stack.axis = .horizontal
         stack.distribution = .fill
         stack.alignment = .fill
@@ -163,9 +168,23 @@ extension DetailsDocumentsViewController {
         return stack
     }
     
+    private func saveOrder() {
+        if let order = order {
+            order.date = datePicker.date
+            order.made = switcherMade.isOn
+            order.paid = switcherPaid.isOn
+            StorageManager.shared.saveContext()
+        }
+    }
+    
     @objc private func selectCustomer() {
         let customersVC = CustomersTableViewController()
         navigationController?.pushViewController(customersVC, animated: true)
-        
+        customersVC.didSelect = { [unowned self] customer in
+            if let customer = customer {
+                self.order?.customer = customer
+                self.customerTextField.text = customer.name
+            }
+        }
     }
 }
