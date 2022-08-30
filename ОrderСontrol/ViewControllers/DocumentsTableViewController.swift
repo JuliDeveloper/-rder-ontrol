@@ -51,6 +51,14 @@ extension DocumentsTableViewController {
     }
 }
 
+// MARK: - Table view delegate
+extension DocumentsTableViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let documentVC = DetailsDocumentsViewController()
+        documentVC.order = documents[indexPath.row]
+    }
+}
+
 // MARK: - Private funcs
 extension DocumentsTableViewController {
     private func setUpButtons() {

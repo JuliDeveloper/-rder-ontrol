@@ -10,6 +10,7 @@ import UIKit
 class DetailsDocumentsViewController: UIViewController {
     
     //private let context = StorageManager.shared.context
+    var order: Order!
     
     override func viewDidLoad() {
         super.viewDidLoad()
