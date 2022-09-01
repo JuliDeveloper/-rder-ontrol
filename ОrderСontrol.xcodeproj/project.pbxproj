@@ -11,6 +11,8 @@
 		253B0FCB28BAA8FD0027943F /* ServicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FCA28BAA8FD0027943F /* ServicesTableViewController.swift */; };
 		253B0FCD28BD34870027943F /* DocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FCC28BD34870027943F /* DocumentsTableViewController.swift */; };
 		253B0FCF28BD351B0027943F /* DetailsDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FCE28BD351B0027943F /* DetailsDocumentViewController.swift */; };
+		253B0FF428C12D460027943F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FF328C12D460027943F /* Constants.swift */; };
+		253B0FF828C132900027943F /* Extension + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FF728C132900027943F /* Extension + TableView.swift */; };
 		25D1B66728B519E9002D3B6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66628B519E9002D3B6C /* AppDelegate.swift */; };
 		25D1B66B28B519E9002D3B6C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66A28B519E9002D3B6C /* MainViewController.swift */; };
 		25D1B67128B519E9002D3B6C /* OrderControl.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66F28B519E9002D3B6C /* OrderControl.xcdatamodeld */; };
@@ -38,6 +40,8 @@
 		253B0FCA28BAA8FD0027943F /* ServicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesTableViewController.swift; sourceTree = "<group>"; };
 		253B0FCC28BD34870027943F /* DocumentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewController.swift; sourceTree = "<group>"; };
 		253B0FCE28BD351B0027943F /* DetailsDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDocumentViewController.swift; sourceTree = "<group>"; };
+		253B0FF328C12D460027943F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		253B0FF728C132900027943F /* Extension + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + TableView.swift"; sourceTree = "<group>"; };
 		25D1B66328B519E9002D3B6C /* ОrderСontrol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ОrderСontrol.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D1B66628B519E9002D3B6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25D1B66A28B519E9002D3B6C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				25D1B67228B519E9002D3B6C /* Assets.xcassets */,
+				253B0FF328C12D460027943F /* Constants.swift */,
 			);
 			path = Resourses;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				25D1B6C028B6BB3F002D3B6C /* Extension + UITextFietld.swift */,
 				25D1B6C328B7F514002D3B6C /* Extension + UIStackView.swift */,
 				253B0FC828BAA76D0027943F /* Extension + UIViewController.swift */,
+				253B0FF728C132900027943F /* Extension + TableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -265,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25D1B6B428B6ABAA002D3B6C /* Order+CoreDataProperties.swift in Sources */,
+				253B0FF428C12D460027943F /* Constants.swift in Sources */,
 				253B0FCF28BD351B0027943F /* DetailsDocumentViewController.swift in Sources */,
 				25D1B66B28B519E9002D3B6C /* MainViewController.swift in Sources */,
 				253B0FCD28BD34870027943F /* DocumentsTableViewController.swift in Sources */,
@@ -279,6 +286,7 @@
 				25D1B69728B64F83002D3B6C /* StorageManager.swift in Sources */,
 				25D1B6B828B6ABAA002D3B6C /* Customer+CoreDataProperties.swift in Sources */,
 				25D1B6B628B6ABAA002D3B6C /* RowOfOrder+CoreDataProperties.swift in Sources */,
+				253B0FF828C132900027943F /* Extension + TableView.swift in Sources */,
 				25D1B6BF28B6B85A002D3B6C /* Extensin + UILable.swift in Sources */,
 				25D1B6A728B69160002D3B6C /* CustomersTableViewController.swift in Sources */,
 				25D1B6C128B6BB3F002D3B6C /* Extension + UITextFietld.swift in Sources */,

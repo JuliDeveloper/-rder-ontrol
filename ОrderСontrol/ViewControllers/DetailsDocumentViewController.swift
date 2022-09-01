@@ -19,30 +19,30 @@ class DetailsDocumentsViewController: UIViewController {
         picker.date = .now
         picker.backgroundColor = .white
         picker.layer.borderWidth = 1
-        picker.layer.borderColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        picker.layer.borderColor = Color.orangeColor.cgColor
         picker.layer.masksToBounds = true
-        picker.layer.cornerRadius = 10
+        picker.layer.cornerRadius = Constant.radius
         return picker
     }()
     let customerLable: UILabel = {
         let lable = UILabel()
         lable.text = "Customer"
         lable.font = .systemFont(ofSize: 17)
-        lable.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        lable.tintColor = Color.blackColor
         return lable
     }()
     let madeLable: UILabel = {
         let lable = UILabel()
         lable.text = "Made"
         lable.font = .systemFont(ofSize: 17)
-        lable.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        lable.tintColor = Color.blackColor
         return lable
     }()
     let paidLable: UILabel = {
         let lable = UILabel()
         lable.text = "Paid"
         lable.font = .systemFont(ofSize: 17)
-        lable.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        lable.tintColor = Color.blackColor
         return lable
     }()
     let customerTextField: UITextField = {
@@ -51,22 +51,22 @@ class DetailsDocumentsViewController: UIViewController {
         spacer.frame = CGRect(x: 0, y: 0, width: 12, height: 31)
         tf.leftView = spacer
         tf.leftViewMode = .always
-        tf.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        tf.layer.borderColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        tf.backgroundColor = Color.whiteColor
+        tf.layer.borderColor = Color.orangeColor.cgColor
         tf.layer.borderWidth = 1
-        tf.layer.cornerRadius = 10
+        tf.layer.cornerRadius = Constant.radius
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.heightAnchor.constraint(equalToConstant: 31).isActive = true
         return tf
     }()
     private let switcherMade: UISwitch = {
         let switcher = UISwitch()
-        switcher.onTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        switcher.onTintColor = Color.orangeColor
         return switcher
     }()
     private let switcherPaid: UISwitch = {
         let switcher = UISwitch()
-        switcher.onTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        switcher.onTintColor = Color.orangeColor
         return switcher
     }()
     lazy var selectCustomerButton: UIButton = {
@@ -75,8 +75,8 @@ class DetailsDocumentsViewController: UIViewController {
         let image = UIImage(systemName: "arrowshape.turn.up.right.circle.fill",
                             withConfiguration: largeConfig)
         button.setImage(image, for: .normal)
-        button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        button.tintColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        button.backgroundColor = Color.whiteColor
+        button.tintColor = Color.orangeColor
         button.addTarget(self, action: #selector(selectCustomer), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.widthAnchor.constraint(equalToConstant: 30).isActive = true
@@ -88,7 +88,7 @@ class DetailsDocumentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Order"
-        view.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        view.backgroundColor = Color.backgroundColor
         
         setUpButtons()
         configStackView()
@@ -101,13 +101,13 @@ extension DetailsDocumentsViewController {
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel,
                                            target: self,
                                            action: #selector(cancel))
-        cancelButton.tintColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        cancelButton.tintColor = Color.orangeColor
         navigationItem.leftBarButtonItem = cancelButton
         
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save,
                                          target: self,
                                          action: #selector(save))
-        saveButton.tintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        saveButton.tintColor = Color.orangeColor
         navigationItem.rightBarButtonItem = saveButton
     }
     

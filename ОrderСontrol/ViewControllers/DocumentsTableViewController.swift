@@ -18,7 +18,9 @@ class DocumentsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Orders"
-        tableView.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        
+        tableView.config()
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         
         setUpButtons()
@@ -74,11 +76,11 @@ extension DocumentsTableViewController {
 extension DocumentsTableViewController {
     private func setUpButtons() {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewDocuments))
-        addButton.tintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        addButton.tintColor = Color.orangeColor
         navigationItem.rightBarButtonItem = addButton
         
         let backButton = UIBarButtonItem()
-        backButton.tintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        backButton.tintColor = Color.backgroundColor
         backButton.title = "Back"
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
