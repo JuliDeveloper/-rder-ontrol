@@ -14,6 +14,7 @@
 		253B0FF428C12D460027943F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FF328C12D460027943F /* Constants.swift */; };
 		253B0FF828C132900027943F /* Extension + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FF728C132900027943F /* Extension + TableView.swift */; };
 		253B0FFA28C1365D0027943F /* CustomLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FF928C1365D0027943F /* CustomLable.swift */; };
+		253B0FFC28C1391F0027943F /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FFB28C1391F0027943F /* CustomSwitch.swift */; };
 		25D1B66728B519E9002D3B6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66628B519E9002D3B6C /* AppDelegate.swift */; };
 		25D1B66B28B519E9002D3B6C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66A28B519E9002D3B6C /* MainViewController.swift */; };
 		25D1B67128B519E9002D3B6C /* OrderControl.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66F28B519E9002D3B6C /* OrderControl.xcdatamodeld */; };
@@ -43,6 +44,7 @@
 		253B0FF328C12D460027943F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		253B0FF728C132900027943F /* Extension + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + TableView.swift"; sourceTree = "<group>"; };
 		253B0FF928C1365D0027943F /* CustomLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLable.swift; sourceTree = "<group>"; };
+		253B0FFB28C1391F0027943F /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
 		25D1B66328B519E9002D3B6C /* ОrderСontrol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ОrderСontrol.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D1B66628B519E9002D3B6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25D1B66A28B519E9002D3B6C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				253B0FF928C1365D0027943F /* CustomLable.swift */,
+				253B0FFB28C1391F0027943F /* CustomSwitch.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			files = (
 				253B0FFA28C1365D0027943F /* CustomLable.swift in Sources */,
 				25D1B6B428B6ABAA002D3B6C /* Order+CoreDataProperties.swift in Sources */,
+				253B0FFC28C1391F0027943F /* CustomSwitch.swift in Sources */,
 				253B0FF428C12D460027943F /* Constants.swift in Sources */,
 				253B0FCF28BD351B0027943F /* DetailsDocumentViewController.swift in Sources */,
 				25D1B66B28B519E9002D3B6C /* MainViewController.swift in Sources */,

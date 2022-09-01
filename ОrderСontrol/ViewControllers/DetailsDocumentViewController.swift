@@ -25,18 +25,9 @@ class DetailsDocumentsViewController: UIViewController {
         return picker
     }()
     
-    let customerLable: UILabel = {
-        let lable = CustomLable(text: "Customer")
-        return lable
-    }()
-    let madeLable: UILabel = {
-        let lable = CustomLable(text: "Made")
-        return lable
-    }()
-    let paidLable: UILabel = {
-        let lable = CustomLable(text: "Paid")
-        return lable
-    }()
+    let customerLable = CustomLable(text: "Customer")
+    let madeLable = CustomLable(text: "Made")
+    let paidLable = CustomLable(text: "Paid")
     
     let customerTextField: UITextField = {
         let tf = UITextField()
@@ -52,16 +43,10 @@ class DetailsDocumentsViewController: UIViewController {
         tf.heightAnchor.constraint(equalToConstant: 31).isActive = true
         return tf
     }()
-    private let switcherMade: UISwitch = {
-        let switcher = UISwitch()
-        switcher.onTintColor = Color.orangeColor
-        return switcher
-    }()
-    private let switcherPaid: UISwitch = {
-        let switcher = UISwitch()
-        switcher.onTintColor = Color.orangeColor
-        return switcher
-    }()
+    
+    private let switcherMade = CustomSwitch()
+    private let switcherPaid = CustomSwitch()
+    
     lazy var selectCustomerButton: UIButton = {
         let button = UIButton()
         let largeConfig = UIImage.SymbolConfiguration(pointSize: 25)
