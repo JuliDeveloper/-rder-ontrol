@@ -10,7 +10,9 @@ import UIKit
 private let reuseIdentifier = "cell"
 
 class DocumentsTableViewController: UITableViewController {
-        
+    
+    private let context = StorageManager.shared.context
+
     var documents: [Order] = []
     
     override func viewDidLoad() {
@@ -20,8 +22,11 @@ class DocumentsTableViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         
         setUpButtons()
+        
         fetchData()
         tableView.reloadData()
+        
+        createNewCell()
     }
 }
 
@@ -35,7 +40,13 @@ extension DocumentsTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         let order = documents[indexPath.row]
         
-        configCell(cell, order)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy"
+        let nameOfCustomer = order.customer == nil ? "--Unknown--" : order.customer?.name
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = formatter.string(from: order.date ?? Date()) + "\t" + (nameOfCustomer ?? "")
+        cell.contentConfiguration = content
         cell.selectionStyle = .none
         
         return cell
@@ -89,12 +100,22 @@ extension DocumentsTableViewController {
     }
     
     private func configCell(_ cell: UITableViewCell, _ order: Order) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM d, yyyy"
-        let nameOfCustomer = order.customer == nil ? "--Unknown--" : order.customer?.name
         
-        var content = cell.defaultContentConfiguration()
-        content.text = formatter.string(from: order.date ?? Date()) + "\t" + (nameOfCustomer ?? "")
-        cell.contentConfiguration = content
+    }
+    
+    func createNewCell() {
+        let order = Order(context: context)
+        let detailsVC = DetailsDocumentsViewController()
+        
+        if detailsVC.isBeingDismissed {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                documents[selectedIndexPath.row] = order
+                tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
+            } else {
+                let indexPath = IndexPath(row: documents.count - 1, section: 0)
+                documents.append(order)
+                tableView.insertRows(at: [indexPath], with: .automatic)
+            }
+        }
     }
 }

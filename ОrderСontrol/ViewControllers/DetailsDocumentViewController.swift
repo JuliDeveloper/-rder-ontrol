@@ -9,9 +9,9 @@ import UIKit
 
 class DetailsDocumentsViewController: UIViewController {
     
-    //private let context = StorageManager.shared.context
+    private let context = StorageManager.shared.context
     var order: Order?
-    
+  
     let datePicker: UIDatePicker = {
         let picker = UIDatePicker()
         picker.datePickerMode = .date
@@ -47,6 +47,10 @@ class DetailsDocumentsViewController: UIViewController {
     }()
     let customerTextField: UITextField = {
         let tf = UITextField()
+        let spacer = UIView()
+        spacer.frame = CGRect(x: 0, y: 0, width: 12, height: 31)
+        tf.leftView = spacer
+        tf.leftViewMode = .always
         tf.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         tf.layer.borderColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         tf.layer.borderWidth = 1
@@ -108,6 +112,12 @@ extension DetailsDocumentsViewController {
     }
     
     @objc private func save() {
+        //let documentVC = DocumentsTableViewController()
+//        if let order = order {
+//            documentVC.order.customer = order.customer
+//            documentVC.order.date = order.date
+//        }
+        saveOrder()
         navigationController?.popViewController(animated: true)
     }
     
@@ -169,8 +179,21 @@ extension DetailsDocumentsViewController {
     }
     
     private func saveOrder() {
+//
+//        if order == nil {
+//            order = Order()
+//        }
+        
+//        if let order = order {
+//            //datePicker.date = order.date
+//            switcherMade.isOn = order.made
+//            switcherPaid.isOn = order.paid
+//            customerTextField.text = order.customer?.name
+//        }
+        
+        //create new object
         if let order = order {
-            order.date = datePicker.date
+            //order.date = datePicker.date
             order.made = switcherMade.isOn
             order.paid = switcherPaid.isOn
             StorageManager.shared.saveContext()
