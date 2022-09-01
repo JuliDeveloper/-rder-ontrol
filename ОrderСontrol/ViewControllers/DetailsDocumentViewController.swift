@@ -24,27 +24,20 @@ class DetailsDocumentsViewController: UIViewController {
         picker.layer.cornerRadius = Constant.radius
         return picker
     }()
+    
     let customerLable: UILabel = {
-        let lable = UILabel()
-        lable.text = "Customer"
-        lable.font = .systemFont(ofSize: 17)
-        lable.tintColor = Color.blackColor
+        let lable = CustomLable(text: "Customer")
         return lable
     }()
     let madeLable: UILabel = {
-        let lable = UILabel()
-        lable.text = "Made"
-        lable.font = .systemFont(ofSize: 17)
-        lable.tintColor = Color.blackColor
+        let lable = CustomLable(text: "Made")
         return lable
     }()
     let paidLable: UILabel = {
-        let lable = UILabel()
-        lable.text = "Paid"
-        lable.font = .systemFont(ofSize: 17)
-        lable.tintColor = Color.blackColor
+        let lable = CustomLable(text: "Paid")
         return lable
     }()
+    
     let customerTextField: UITextField = {
         let tf = UITextField()
         let spacer = UIView()

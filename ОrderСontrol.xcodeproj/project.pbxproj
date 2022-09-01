@@ -13,6 +13,7 @@
 		253B0FCF28BD351B0027943F /* DetailsDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FCE28BD351B0027943F /* DetailsDocumentViewController.swift */; };
 		253B0FF428C12D460027943F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FF328C12D460027943F /* Constants.swift */; };
 		253B0FF828C132900027943F /* Extension + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FF728C132900027943F /* Extension + TableView.swift */; };
+		253B0FFA28C1365D0027943F /* CustomLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FF928C1365D0027943F /* CustomLable.swift */; };
 		25D1B66728B519E9002D3B6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66628B519E9002D3B6C /* AppDelegate.swift */; };
 		25D1B66B28B519E9002D3B6C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66A28B519E9002D3B6C /* MainViewController.swift */; };
 		25D1B67128B519E9002D3B6C /* OrderControl.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B66F28B519E9002D3B6C /* OrderControl.xcdatamodeld */; };
@@ -31,7 +32,6 @@
 		25D1B6B928B6ABAA002D3B6C /* Servise+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6B128B6ABAA002D3B6C /* Servise+CoreDataClass.swift */; };
 		25D1B6BA28B6ABAA002D3B6C /* Servise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6B228B6ABAA002D3B6C /* Servise+CoreDataProperties.swift */; };
 		25D1B6BF28B6B85A002D3B6C /* Extensin + UILable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6BE28B6B85A002D3B6C /* Extensin + UILable.swift */; };
-		25D1B6C128B6BB3F002D3B6C /* Extension + UITextFietld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6C028B6BB3F002D3B6C /* Extension + UITextFietld.swift */; };
 		25D1B6C428B7F514002D3B6C /* Extension + UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1B6C328B7F514002D3B6C /* Extension + UIStackView.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +42,7 @@
 		253B0FCE28BD351B0027943F /* DetailsDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDocumentViewController.swift; sourceTree = "<group>"; };
 		253B0FF328C12D460027943F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		253B0FF728C132900027943F /* Extension + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + TableView.swift"; sourceTree = "<group>"; };
+		253B0FF928C1365D0027943F /* CustomLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLable.swift; sourceTree = "<group>"; };
 		25D1B66328B519E9002D3B6C /* ОrderСontrol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ОrderСontrol.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D1B66628B519E9002D3B6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25D1B66A28B519E9002D3B6C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -62,7 +63,6 @@
 		25D1B6B128B6ABAA002D3B6C /* Servise+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Servise+CoreDataClass.swift"; sourceTree = "<group>"; };
 		25D1B6B228B6ABAA002D3B6C /* Servise+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Servise+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		25D1B6BE28B6B85A002D3B6C /* Extensin + UILable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensin + UILable.swift"; sourceTree = "<group>"; };
-		25D1B6C028B6BB3F002D3B6C /* Extension + UITextFietld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITextFietld.swift"; sourceTree = "<group>"; };
 		25D1B6C328B7F514002D3B6C /* Extension + UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIStackView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,7 +169,6 @@
 			children = (
 				25D1B6A428B68C7B002D3B6C /* Extension + UIButton.swift */,
 				25D1B6BE28B6B85A002D3B6C /* Extensin + UILable.swift */,
-				25D1B6C028B6BB3F002D3B6C /* Extension + UITextFietld.swift */,
 				25D1B6C328B7F514002D3B6C /* Extension + UIStackView.swift */,
 				253B0FC828BAA76D0027943F /* Extension + UIViewController.swift */,
 				253B0FF728C132900027943F /* Extension + TableView.swift */,
@@ -180,6 +179,7 @@
 		25D1B6A828B69297002D3B6C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				253B0FF928C1365D0027943F /* CustomLable.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -270,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				253B0FFA28C1365D0027943F /* CustomLable.swift in Sources */,
 				25D1B6B428B6ABAA002D3B6C /* Order+CoreDataProperties.swift in Sources */,
 				253B0FF428C12D460027943F /* Constants.swift in Sources */,
 				253B0FCF28BD351B0027943F /* DetailsDocumentViewController.swift in Sources */,
@@ -289,7 +290,6 @@
 				253B0FF828C132900027943F /* Extension + TableView.swift in Sources */,
 				25D1B6BF28B6B85A002D3B6C /* Extensin + UILable.swift in Sources */,
 				25D1B6A728B69160002D3B6C /* CustomersTableViewController.swift in Sources */,
-				25D1B6C128B6BB3F002D3B6C /* Extension + UITextFietld.swift in Sources */,
 				25D1B6B728B6ABAA002D3B6C /* Customer+CoreDataClass.swift in Sources */,
 				25D1B6B528B6ABAA002D3B6C /* RowOfOrder+CoreDataClass.swift in Sources */,
 				25D1B67128B519E9002D3B6C /* OrderControl.xcdatamodeld in Sources */,
