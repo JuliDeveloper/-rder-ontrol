@@ -21,7 +21,8 @@ class DocumentsTableViewController: UITableViewController {
         
         tableView.config()
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(UITableViewCell.self,
+                           forCellReuseIdentifier: reuseIdentifier)
         
         setUpButtons()
         
@@ -75,7 +76,9 @@ extension DocumentsTableViewController {
 // MARK: - Private funcs
 extension DocumentsTableViewController {
     private func setUpButtons() {
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewDocuments))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add,
+                                        target: self,
+                                        action: #selector(addNewDocuments))
         addButton.tintColor = Color.orangeColor
         navigationItem.rightBarButtonItem = addButton
         

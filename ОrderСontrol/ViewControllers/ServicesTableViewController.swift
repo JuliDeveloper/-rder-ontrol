@@ -20,7 +20,8 @@ class ServicesTableViewController: UITableViewController {
         
         tableView.config()
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(UITableViewCell.self,
+                           forCellReuseIdentifier: reuseIdentifier)
         
         setUpButtons()
         fetchServise()
@@ -54,7 +55,11 @@ extension ServicesTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let service = services[indexPath.row]
         
-        showAlertControllerForEdit(with: "Edit service", and: "Change title or name", and: service.name ?? "", and: service.info ?? "", editService)
+        showAlertControllerForEdit(with: "Edit service",
+                                   and: "Change title or name",
+                                   and: service.name ?? "",
+                                   and: service.info ?? "",
+                                   editService)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -83,7 +88,9 @@ extension ServicesTableViewController {
     }
     
     private func setUpButtons() {
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewService))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add,
+                                        target: self,
+                                        action: #selector(addNewService))
         addButton.tintColor = Color.orangeColor
         navigationItem.rightBarButtonItem = addButton
         

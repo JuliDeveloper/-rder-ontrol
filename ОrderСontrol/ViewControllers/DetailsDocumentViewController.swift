@@ -55,7 +55,9 @@ class DetailsDocumentsViewController: UIViewController {
         button.setImage(image, for: .normal)
         button.backgroundColor = Color.whiteColor
         button.tintColor = Color.orangeColor
-        button.addTarget(self, action: #selector(selectCustomer), for: .touchUpInside)
+        button.addTarget(self,
+                         action: #selector(selectCustomer),
+                         for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.widthAnchor.constraint(equalToConstant: 30).isActive = true
         button.layer.masksToBounds = true
@@ -125,9 +127,12 @@ extension DetailsDocumentsViewController {
     private func configConstraints(for stack: UIStackView) {
         stack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            stack.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+                                           constant: 20),
+            stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
+                                       constant: 20),
+            stack.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+                                            constant: -20)
         ])
     }
     

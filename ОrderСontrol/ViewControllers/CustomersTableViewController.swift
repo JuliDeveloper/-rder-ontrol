@@ -23,7 +23,8 @@ class CustomersTableViewController: UITableViewController {
         
         tableView.config()
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(UITableViewCell.self,
+                           forCellReuseIdentifier: reuseIdentifier)
         
         setUpButtons()
         fetchData()
@@ -87,7 +88,9 @@ extension CustomersTableViewController {
         backButton.tintColor = Color.orangeColor
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewCustomer))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add,
+                                        target: self,
+                                        action: #selector(addNewCustomer))
         addButton.tintColor = Color.orangeColor
         navigationItem.rightBarButtonItem = addButton
     }

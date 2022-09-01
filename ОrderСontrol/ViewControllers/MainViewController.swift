@@ -12,28 +12,36 @@ final class MainViewController: UIViewController {
     private lazy var customerButton: UIButton = {
         let button = UIButton(type: .system)
         button.config("Customer", "person.fill")
-        button.addTarget(self, action: #selector(openCustomerController), for: .touchUpInside)
+        button.addTarget(self,
+                         action: #selector(openCustomerController),
+                         for: .touchUpInside)
         return button
     }()
     
     private lazy var serviseButton: UIButton = {
         let button = UIButton(type: .system)
         button.config("Servise", "tray.full.fill")
-        button.addTarget(self, action: #selector(openServiceController), for: .touchUpInside)
+        button.addTarget(self,
+                         action: #selector(openServiceController),
+                         for: .touchUpInside)
         return button
     }()
     
     private lazy var documentsButton: UIButton = {
         let button = UIButton(type: .system)
         button.config("Documents", "folder.fill")
-        button.addTarget(self, action: #selector(openDocumentsController), for: .touchUpInside)
+        button.addTarget(self,
+                         action: #selector(openDocumentsController),
+                         for: .touchUpInside)
         return button
     }()
     
     private lazy var ordersReportButton: UIButton = {
         let button = UIButton(type: .system)
         button.config("Orders report", "list.bullet.below.rectangle")
-        button.addTarget(self, action: #selector(openOrdersReportController), for: .touchUpInside)
+        button.addTarget(self,
+                         action: #selector(openOrdersReportController),
+                         for: .touchUpInside)
         return button
     }()
 
@@ -62,9 +70,12 @@ extension MainViewController {
     private func setUpConstraints(for stack: UIStackView) {
         stack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stack.topAnchor.constraint(equalTo: view.topAnchor, constant: view.bounds.height / 3),
-            stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            stack.topAnchor.constraint(equalTo: view.topAnchor,
+                                       constant: view.bounds.height / 3),
+            stack.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+                                           constant: 20),
+            stack.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+                                            constant: -20)
         ])
     }
     
