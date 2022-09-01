@@ -70,7 +70,7 @@ extension CustomersTableViewController {
             didSelect(customer)
             navigationController?.popViewController(animated: true)
         } else {
-            showAlertController(with: "Edit Customer",
+            showAlertControllerForEdit(with: "Edit Customer",
                                 and: "Change name or info",
                                 and: customer.name ?? "",
                                 and: customer.info ?? "",
@@ -104,7 +104,7 @@ extension CustomersTableViewController {
     }
 
     @objc private func addNewCustomer() {
-        showAlertController(with: "New Customer",
+        showAlertControllerForNew(with: "New Customer",
                             and: "Add name and info",
                             and: "",
                             and: "",

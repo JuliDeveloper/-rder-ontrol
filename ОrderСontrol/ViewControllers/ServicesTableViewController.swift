@@ -54,7 +54,7 @@ extension ServicesTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let service = services[indexPath.row]
         
-        showAlertController(with: "Edit service", and: "Change title or name", and: service.name ?? "", and: service.info ?? "", editService)
+        showAlertControllerForEdit(with: "Edit service", and: "Change title or name", and: service.name ?? "", and: service.info ?? "", editService)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -94,7 +94,7 @@ extension ServicesTableViewController {
     }
     
     @objc private func addNewService() {
-        showAlertController(with: "Add new servise",
+        showAlertControllerForNew(with: "Add new servise",
                             and: "Add title and info",
                             and: "",
                             and: "",
