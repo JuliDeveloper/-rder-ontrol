@@ -23,10 +23,7 @@ extension UIViewController {
                       !nameCustomer.isEmpty else {
                     return
                 }
-                guard let infoCustomer = alert.textFields?.last?.text,
-                      !infoCustomer.isEmpty else {
-                    return
-                }
+                guard let infoCustomer = alert.textFields?.last?.text else { return }
                 funcActions(nameCustomer, infoCustomer)
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
@@ -68,10 +65,7 @@ extension UIViewController {
                       !nameCustomer.isEmpty else {
                     return
                 }
-                guard let infoCustomer = alert.textFields?.last?.text,
-                      !infoCustomer.isEmpty else {
-                    return
-                }
+                guard let infoCustomer = alert.textFields?.last?.text else { return }
                 funcActions(nameCustomer, infoCustomer)
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
