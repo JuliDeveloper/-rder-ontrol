@@ -76,16 +76,13 @@ extension DocumentsTableViewController {
 // MARK: - Private funcs
 extension DocumentsTableViewController {
     private func setUpButtons() {
+        navigationController?.setUpBackButtons()
+        
         let addButton = UIBarButtonItem(barButtonSystemItem: .add,
                                         target: self,
                                         action: #selector(addNewDocuments))
         addButton.tintColor = Color.orangeColor
         navigationItem.rightBarButtonItem = addButton
-        
-        let backButton = UIBarButtonItem()
-        backButton.tintColor = Color.backgroundColor
-        backButton.title = "Back"
-        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
     @objc private func addNewDocuments() {

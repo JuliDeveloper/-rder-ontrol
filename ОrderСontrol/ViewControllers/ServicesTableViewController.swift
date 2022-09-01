@@ -88,16 +88,13 @@ extension ServicesTableViewController {
     }
     
     private func setUpButtons() {
+        navigationController?.setUpBackButtons()
+        
         let addButton = UIBarButtonItem(barButtonSystemItem: .add,
                                         target: self,
                                         action: #selector(addNewService))
         addButton.tintColor = Color.orangeColor
         navigationItem.rightBarButtonItem = addButton
-        
-        let backButton = UIBarButtonItem()
-        backButton.title = "Back"
-        backButton.tintColor = Color.orangeColor
-        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
     @objc private func addNewService() {

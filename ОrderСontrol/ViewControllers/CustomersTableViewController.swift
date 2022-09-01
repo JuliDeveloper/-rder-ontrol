@@ -83,10 +83,7 @@ extension CustomersTableViewController {
 //MARK: - Private func
 extension CustomersTableViewController {
     private func setUpButtons() {
-        let backButton = UIBarButtonItem()
-        backButton.title = "Back"
-        backButton.tintColor = Color.orangeColor
-        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        navigationController?.setUpBackButtons()
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add,
                                         target: self,
