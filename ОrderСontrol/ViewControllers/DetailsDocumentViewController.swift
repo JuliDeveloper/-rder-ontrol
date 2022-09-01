@@ -68,6 +68,8 @@ class DetailsDocumentsViewController: UIViewController {
         title = "Order"
         view.backgroundColor = Color.backgroundColor
         
+        customerTextField.delegate = self
+        
         setUpButtons()
         configStackView()
     }
@@ -187,5 +189,11 @@ extension DetailsDocumentsViewController {
                 self.customerTextField.text = customer.name
             }
         }
+    }
+}
+
+extension DetailsDocumentsViewController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return false
     }
 }
