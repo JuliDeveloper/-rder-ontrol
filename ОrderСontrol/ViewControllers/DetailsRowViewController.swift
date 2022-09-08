@@ -10,6 +10,7 @@ import UIKit
 class DetailsRowViewController: UIViewController {
     
     var row: RowOfOrder?
+    var delegate: RowsViewControllerDelegate?
     
     private let serviceLabel = CustomLabel(text: "Service:")
     private let priceLabel = CustomLabel(text: "Price:")
@@ -89,6 +90,10 @@ extension DetailsRowViewController {
     }
     
     @objc private func save() {
+        
+        
+        
+        delegate?.reloadData()
         navigationController?.popViewController(animated: true)
     }
     

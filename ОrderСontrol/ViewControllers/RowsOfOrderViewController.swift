@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol RowsViewControllerDelegate {
+    func reloadData()
+}
+
 class RowsOfOrderViewController: UITableViewController {
     
     var rows: [RowOfOrder] = []
@@ -16,6 +20,8 @@ class RowsOfOrderViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        
+        fetchData()
     }
 }
 
@@ -29,12 +35,14 @@ extension RowsOfOrderViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         let row = rows[indexPath.row]
         
-        let detailsVC = DetailsRowViewController()
-        let nameOfService = row.service != nil ? row.service?.name : "???"
-        let priceText = detailsVC.priceTextField.text
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy"
+        
+        let nameOfCustomer = (row.order?.customer == nil) ? "-- Unknown --" : (row.order?.customer?.name)
         
         var content = cell.defaultContentConfiguration()
-        content.text = "\(nameOfService ?? "") - \(priceText ?? "0.0")"
+        content.text = formatter.string(from: row.order?.date ?? Date()) + "\t" + (nameOfCustomer ?? "")
+        
         cell.contentConfiguration = content
 
         return cell
@@ -45,5 +53,25 @@ extension RowsOfOrderViewController {
 extension RowsOfOrderViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+}
+
+extension RowsOfOrderViewController {
+    private func fetchData() {
+        StorageManager.shared.fetchRows { result in
+            switch result {
+            case .success(let rowList):
+                rows = rowList
+            case .failure(let error):
+                print("Don't fetch data - \(error.localizedDescription)")
+            }
+        }
+    }
+}
+
+extension RowsOfOrderViewController: RowsViewControllerDelegate {
+    func reloadData() {
+        fetchData()
+        tableView.reloadData()
     }
 }
