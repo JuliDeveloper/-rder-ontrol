@@ -18,7 +18,7 @@ extension RowOfOrder {
 
     @NSManaged public var sum: Float
     @NSManaged public var order: Order?
-    @NSManaged public var servise: Service?
+    @NSManaged public var service: Service?
 
 }
 

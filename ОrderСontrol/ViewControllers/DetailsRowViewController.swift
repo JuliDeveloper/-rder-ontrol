@@ -9,6 +9,8 @@ import UIKit
 
 class DetailsRowViewController: UIViewController {
     
+    var row: RowOfOrder?
+    
     private let serviceLabel = CustomLabel(text: "Service:")
     private let priceLabel = CustomLabel(text: "Price:")
     
@@ -141,6 +143,13 @@ extension DetailsRowViewController {
     }
     
     @objc private func selectService() {
-        
+        let servicesVC = ServicesTableViewController()
+        navigationController?.pushViewController(servicesVC, animated: true)
+        servicesVC.didSelectedService = { [unowned self] service in
+            self.row?.service = service
+            self.serviceTextField.text = service.name
+            servicesVC.services.append(service)
+            servicesVC.tableView.reloadData()
+        }
     }
 }

@@ -45,7 +45,7 @@ class StorageManager {
         }
     }
     
-    func fetchServise(_ completion: (Result<[Service], Error>) -> Void) {
+    func fetchService(_ completion: (Result<[Service], Error>) -> Void) {
         let fetchRequest = Service.fetchRequest()
         
         do {

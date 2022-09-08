@@ -15,12 +15,12 @@
     <entity name="RowOfOrder" representedClassName="RowOfOrder" syncable="YES">
         <attribute name="sum" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="order" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Order" inverseName="rowsOfOrder" inverseEntity="Order"/>
-        <relationship name="servise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Service" inverseName="rowsOfOrders" inverseEntity="Service"/>
+        <relationship name="service" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Service" inverseName="rowsOfOrders" inverseEntity="Service"/>
     </entity>
     <entity name="Service" representedClassName="Service" syncable="YES">
         <attribute name="info" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="rowsOfOrders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RowOfOrder" inverseName="servise" inverseEntity="RowOfOrder"/>
+        <relationship name="rowsOfOrders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RowOfOrder" inverseName="service" inverseEntity="RowOfOrder"/>
     </entity>
     <elements>
         <element name="Customer" positionX="-137.5078125" positionY="-140.41015625" width="128" height="74"/>

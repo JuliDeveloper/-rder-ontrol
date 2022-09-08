@@ -11,8 +11,11 @@ private let reuseIdentifier = "cell"
 
 class ServicesTableViewController: UITableViewController {
     
+    typealias selectService = (Service) -> ()
+    var didSelectedService: selectService?
+        
     private let context = StorageManager.shared.context
-    private var services: [Service] = []
+    var services: [Service] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +27,7 @@ class ServicesTableViewController: UITableViewController {
                            forCellReuseIdentifier: reuseIdentifier)
         
         setUpButtons()
-        fetchServise()
+        fetchService()
         tableView.reloadData()
     }
 }
@@ -55,11 +58,17 @@ extension ServicesTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let service = services[indexPath.row]
         
-        showAlertControllerForEdit(with: "Edit service",
-                                   and: "Change title or name",
-                                   and: service.name ?? "",
-                                   and: service.info ?? "",
-                                   editService)
+        if let didSelectedService = self.didSelectedService {
+            didSelectedService(service)
+            navigationController?.popViewController(animated: true)
+            
+        } else {
+            showAlertControllerForEdit(with: "Edit service",
+                                       and: "Change title or name",
+                                       and: service.name ?? "",
+                                       and: service.info ?? "",
+                                       editService)
+        }
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -76,8 +85,8 @@ extension ServicesTableViewController {
 
 // MARK: - Private func's
 extension ServicesTableViewController {
-    private func fetchServise() {
-        StorageManager.shared.fetchServise { result in
+    private func fetchService() {
+        StorageManager.shared.fetchService { result in
             switch result {
             case .success(let services):
                 self.services = services
