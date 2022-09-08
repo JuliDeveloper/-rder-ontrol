@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2527DCAF28CA32EE0049BE19 /* RowOfOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2527DCAE28CA32EE0049BE19 /* RowOfOrderViewController.swift */; };
+		2527DCAF28CA32EE0049BE19 /* RowsOfOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2527DCAE28CA32EE0049BE19 /* RowsOfOrderViewController.swift */; };
 		2527DCB128CA37970049BE19 /* DetailsRowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2527DCB028CA37970049BE19 /* DetailsRowViewController.swift */; };
 		253B0FC928BAA76D0027943F /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FC828BAA76D0027943F /* Extension + UIViewController.swift */; };
 		253B0FCB28BAA8FD0027943F /* ServicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FCA28BAA8FD0027943F /* ServicesTableViewController.swift */; };
@@ -40,7 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2527DCAE28CA32EE0049BE19 /* RowOfOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowOfOrderViewController.swift; sourceTree = "<group>"; };
+		2527DCAE28CA32EE0049BE19 /* RowsOfOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowsOfOrderViewController.swift; sourceTree = "<group>"; };
 		2527DCB028CA37970049BE19 /* DetailsRowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRowViewController.swift; sourceTree = "<group>"; };
 		253B0FC828BAA76D0027943F /* Extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
 		253B0FCA28BAA8FD0027943F /* ServicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesTableViewController.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 				253B0FCA28BAA8FD0027943F /* ServicesTableViewController.swift */,
 				253B0FCC28BD34870027943F /* DocumentsTableViewController.swift */,
 				253B0FCE28BD351B0027943F /* DetailsDocumentViewController.swift */,
-				2527DCAE28CA32EE0049BE19 /* RowOfOrderViewController.swift */,
+				2527DCAE28CA32EE0049BE19 /* RowsOfOrderViewController.swift */,
 				2527DCB028CA37970049BE19 /* DetailsRowViewController.swift */,
 			);
 			path = ViewControllers;
@@ -304,7 +304,7 @@
 				25D1B6B628B6ABAA002D3B6C /* RowOfOrder+CoreDataProperties.swift in Sources */,
 				253B0FF828C132900027943F /* Extension + TableView.swift in Sources */,
 				25D1B6BF28B6B85A002D3B6C /* Extensin + UILable.swift in Sources */,
-				2527DCAF28CA32EE0049BE19 /* RowOfOrderViewController.swift in Sources */,
+				2527DCAF28CA32EE0049BE19 /* RowsOfOrderViewController.swift in Sources */,
 				25D1B6A728B69160002D3B6C /* CustomersTableViewController.swift in Sources */,
 				25D1B6B728B6ABAA002D3B6C /* Customer+CoreDataClass.swift in Sources */,
 				25D1B6B528B6ABAA002D3B6C /* RowOfOrder+CoreDataClass.swift in Sources */,

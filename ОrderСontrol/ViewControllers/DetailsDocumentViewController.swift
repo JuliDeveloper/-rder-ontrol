@@ -70,8 +70,8 @@ class DetailsDocumentsViewController: UIViewController {
         return button
     }()
     
-    private let serviceTable: RowOfOrderViewController = {
-        let table = RowOfOrderViewController()
+    private let serviceTable: RowsOfOrderViewController = {
+        let table = RowsOfOrderViewController()
         table.refreshControl?.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()

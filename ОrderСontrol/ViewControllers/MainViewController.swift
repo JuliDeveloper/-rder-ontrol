@@ -95,7 +95,7 @@ extension MainViewController {
     }
 
     @objc private func openOrdersReportController() {
-        let rowsVC = RowOfOrderViewController()
+        let rowsVC = RowsOfOrderViewController()
         navigationController?.pushViewController(rowsVC, animated: true)
     }
 }

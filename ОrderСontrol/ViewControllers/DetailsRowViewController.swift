@@ -28,7 +28,7 @@ class DetailsRowViewController: UIViewController {
         tf.heightAnchor.constraint(equalToConstant: 31).isActive = true
         return tf
     }()
-    private let priceTextField: UITextField = {
+    let priceTextField: UITextField = {
         let tf = UITextField()
         let spacer = UIView()
         spacer.frame = CGRect(x: 0, y: 0, width: 12, height: 31)
