@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailsDocumentsViewController: UIViewController {
     
     private let context = StorageManager.shared.context
+    
     var order: Order?
+    var delegate: DocumentViewControllerDelegate?
+
   
     let datePicker: UIDatePicker = {
         let picker = UIDatePicker()
@@ -44,8 +48,8 @@ class DetailsDocumentsViewController: UIViewController {
         return tf
     }()
     
-    private let switcherMade = CustomSwitch()
-    private let switcherPaid = CustomSwitch()
+    let switcherMade = CustomSwitch()
+    let switcherPaid = CustomSwitch()
     
     lazy var selectCustomerButton: UIButton = {
         let button = UIButton()
@@ -94,12 +98,23 @@ extension DetailsDocumentsViewController {
     }
     
     @objc private func save() {
-        //let documentVC = DocumentsTableViewController()
-//        if let order = order {
-//            documentVC.order.customer = order.customer
-//            documentVC.order.date = order.date
-//        }
-        saveOrder()
+        
+        let customer = Customer(context: context)
+        
+        if order == nil {
+            StorageManager.shared.addDocument(customer: customer,
+                                              customerName: customerTextField.text ?? "",
+                                              made: switcherMade.isOn,
+                                              paid: switcherPaid.isOn,
+                                              datePicker: datePicker)
+        } else {
+            StorageManager.shared.editDocument(document: order ?? Order(),
+                                               newCustomer: customer,
+                                               newCustomerName: customerTextField.text ?? "",
+                                               newMade: switcherMade.isOn,
+                                               newPaid: switcherPaid.isOn)
+        }
+        delegate?.reloadData()
         navigationController?.popViewController(animated: true)
     }
     
@@ -163,36 +178,12 @@ extension DetailsDocumentsViewController {
         return stack
     }
     
-    private func saveOrder() {
-//
-//        if order == nil {
-//            order = Order()
-//        }
-        
-//        if let order = order {
-//            //datePicker.date = order.date
-//            switcherMade.isOn = order.made
-//            switcherPaid.isOn = order.paid
-//            customerTextField.text = order.customer?.name
-//        }
-        
-        //create new object
-        if let order = order {
-            //order.date = datePicker.date
-            order.made = switcherMade.isOn
-            order.paid = switcherPaid.isOn
-            StorageManager.shared.saveContext()
-        }
-    }
-    
     @objc private func selectCustomer() {
         let customersVC = CustomersTableViewController()
         navigationController?.pushViewController(customersVC, animated: true)
         customersVC.didSelect = { [unowned self] customer in
-            if let customer = customer {
-                self.order?.customer = customer
-                self.customerTextField.text = customer.name
-            }
+            self.order?.customer = customer
+            self.customerTextField.text = customer.name
         }
     }
 }

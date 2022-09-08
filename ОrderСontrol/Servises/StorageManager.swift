@@ -79,6 +79,33 @@ class StorageManager {
         }
     }
     
+    func addDocument(customer: Customer,
+                     customerName: String,
+                     made: Bool, paid: Bool,
+                     datePicker: UIDatePicker) {
+        let document = Order(context: context)
+        document.customer = customer
+        document.customer?.name = customerName
+        document.date = datePicker.date
+        document.made = made
+        document.paid = made
+        
+        saveContext()
+    }
+    
+    func editDocument(document: Order,
+                      newCustomer: Customer,
+                      newCustomerName: String,
+                      newMade: Bool,
+                      newPaid: Bool) {
+        document.customer = newCustomer
+        document.customer?.name = newCustomerName
+        document.made = newMade
+        document.paid = newPaid
+        
+        saveContext()
+    }
+    
     func deleteObject(object: NSManagedObject) {
         context.delete(object)
         saveContext()

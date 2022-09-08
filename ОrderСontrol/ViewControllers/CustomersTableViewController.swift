@@ -11,7 +11,7 @@ private let reuseIdentifier = "cell"
 
 class CustomersTableViewController: UITableViewController {
     
-    typealias Select = (Customer?) -> ()
+    typealias Select = (Customer) -> ()
     var didSelect: Select?
     
     private let context = StorageManager.shared.context
@@ -121,8 +121,6 @@ extension CustomersTableViewController {
         
         let cellIndex = IndexPath(row: customers.count - 1, section: 0)
         tableView.insertRows(at: [cellIndex], with: .automatic)
-        
-        StorageManager.shared.saveContext()
     }
     
     private func editCustomer(_ newName: String, _ newInfo: String) {

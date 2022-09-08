@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol DocumentViewControllerDelegate {
+    func reloadData()
+}
+
 private let reuseIdentifier = "cell"
 
 class DocumentsTableViewController: UITableViewController {
@@ -27,9 +31,6 @@ class DocumentsTableViewController: UITableViewController {
         setUpButtons()
         
         fetchData()
-        tableView.reloadData()
-        
-        createNewCell()
     }
 }
 
@@ -45,7 +46,7 @@ extension DocumentsTableViewController {
         
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d, yyyy"
-        let nameOfCustomer = order.customer == nil ? "--Unknown--" : order.customer?.name
+        let nameOfCustomer = order.customer != nil ? order.customer?.name : "--Unknown--"
         
         var content = cell.defaultContentConfiguration()
         content.text = formatter.string(from: order.date ?? Date()) + "\t" + (nameOfCustomer ?? "")
@@ -68,8 +69,18 @@ extension DocumentsTableViewController {
 // MARK: - Table view delegate
 extension DocumentsTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let order = documents[indexPath.row]
+        
         let documentVC = DetailsDocumentsViewController()
-        documentVC.order = documents[indexPath.row]
+        documentVC.order = order
+        documentVC.customerTextField.text = order.customer?.name
+        documentVC.datePicker.date = order.date ?? Date()
+        documentVC.switcherPaid.isOn = order.paid
+        documentVC.switcherMade.isOn = order.made
+        documentVC.delegate = self
+        
+        navigationController?.pushViewController(documentVC, animated: true)
     }
 }
 
@@ -87,6 +98,7 @@ extension DocumentsTableViewController {
     
     @objc private func addNewDocuments() {
         let detailsVC = DetailsDocumentsViewController()
+        detailsVC.delegate = self
         navigationController?.pushViewController(detailsVC, animated: true)
     }
     
@@ -100,24 +112,11 @@ extension DocumentsTableViewController {
             }
         }
     }
-    
-    private func configCell(_ cell: UITableViewCell, _ order: Order) {
-        
-    }
-    
-    func createNewCell() {
-        let order = Order(context: context)
-        let detailsVC = DetailsDocumentsViewController()
-        
-        if detailsVC.isBeingDismissed {
-            if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                documents[selectedIndexPath.row] = order
-                tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
-            } else {
-                let indexPath = IndexPath(row: documents.count - 1, section: 0)
-                documents.append(order)
-                tableView.insertRows(at: [indexPath], with: .automatic)
-            }
-        }
+}
+
+extension DocumentsTableViewController: DocumentViewControllerDelegate {
+    func reloadData() {
+        fetchData()
+        tableView.reloadData()
     }
 }

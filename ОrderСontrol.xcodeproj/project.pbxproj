@@ -126,7 +126,6 @@
 			children = (
 				25D1B66628B519E9002D3B6C /* AppDelegate.swift */,
 				25D1B67728B519E9002D3B6C /* Info.plist */,
-				25D1B66F28B519E9002D3B6C /* OrderControl.xcdatamodeld */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -164,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				25D1B69628B64F83002D3B6C /* StorageManager.swift */,
+				25D1B66F28B519E9002D3B6C /* OrderControl.xcdatamodeld */,
 			);
 			path = Servises;
 			sourceTree = "<group>";
