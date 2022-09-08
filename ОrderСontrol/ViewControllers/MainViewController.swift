@@ -90,9 +90,12 @@ extension MainViewController {
     }
 
     @objc private func openDocumentsController() {
-        let docementsVC = DocumentsTableViewController()
-        navigationController?.pushViewController(docementsVC, animated: true)
+        let documentsVC = DocumentsTableViewController()
+        navigationController?.pushViewController(documentsVC, animated: true)
     }
 
-    @objc private func openOrdersReportController() {}
+    @objc private func openOrdersReportController() {
+        let rowsVC = RowOfOrderViewController()
+        navigationController?.pushViewController(rowsVC, animated: true)
+    }
 }

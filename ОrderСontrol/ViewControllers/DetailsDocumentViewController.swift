@@ -32,6 +32,7 @@ class DetailsDocumentsViewController: UIViewController {
     let customerLabel = CustomLabel(text: "Customer")
     let madeLabel = CustomLabel(text: "Made")
     let paidLabel = CustomLabel(text: "Paid")
+    let rowsLabel = CustomLabel(text: "Rows of order")
     
     let customerTextField: UITextField = {
         let tf = UITextField()
@@ -66,6 +67,23 @@ class DetailsDocumentsViewController: UIViewController {
         button.widthAnchor.constraint(equalToConstant: 30).isActive = true
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 30 / 2
+        return button
+    }()
+    
+    private let serviceTable: RowOfOrderViewController = {
+        let table = RowOfOrderViewController()
+        table.refreshControl?.translatesAutoresizingMaskIntoConstraints = false
+        return table
+    }()
+    
+    private lazy var rowButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Add Row", for: .normal)
+        button.backgroundColor = Color.orangeColor
+        button.tintColor = Color.whiteColor
+        button.layer.cornerRadius = Constant.radius
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.widthAnchor.constraint(equalToConstant: 100).isActive = true
         return button
     }()
     
@@ -122,13 +140,15 @@ extension DetailsDocumentsViewController {
         let stackCustomer = configStackCustomer()
         let madeStack = configStackMade()
         let paidStack = configStackPaid()
+        let rowsStack = configStackRows()
         
         let stack = UIStackView(arrangedSubviews: [datePicker, stackCustomer,
-                                                   madeStack, paidStack])
+                                                   madeStack, paidStack,
+                                                   rowsStack])
         stack.axis = .vertical
         stack.alignment = .fill
         stack.distribution = .fill
-        stack.spacing = 20
+        stack.spacing = 10
         
         view.addSubview(stack)
         
@@ -167,6 +187,15 @@ extension DetailsDocumentsViewController {
     
     private func configStackPaid() -> UIStackView {
         let stack = UIStackView(arrangedSubviews: [paidLabel, switcherPaid])
+        stack.axis = .horizontal
+        stack.distribution = .fill
+        stack.alignment = .fill
+        stack.spacing = 10
+        return stack
+    }
+    
+    private func configStackRows() -> UIStackView {
+        let stack = UIStackView(arrangedSubviews: [rowsLabel, rowButton])
         stack.axis = .horizontal
         stack.distribution = .fill
         stack.alignment = .fill
