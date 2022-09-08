@@ -29,9 +29,9 @@ class DetailsDocumentsViewController: UIViewController {
         return picker
     }()
     
-    let customerLable = CustomLable(text: "Customer")
-    let madeLable = CustomLable(text: "Made")
-    let paidLable = CustomLable(text: "Paid")
+    let customerLabel = CustomLabel(text: "Customer")
+    let madeLabel = CustomLabel(text: "Made")
+    let paidLabel = CustomLabel(text: "Paid")
     
     let customerTextField: UITextField = {
         let tf = UITextField()
@@ -152,7 +152,7 @@ extension DetailsDocumentsViewController {
     }
     
     private func configStackCustomer() -> UIStackView {
-        let stack = UIStackView(arrangedSubviews: [customerLable, customerTextField, selectCustomerButton])
+        let stack = UIStackView(arrangedSubviews: [customerLabel, customerTextField, selectCustomerButton])
         stack.axis = .horizontal
         stack.distribution = .fillProportionally
         stack.alignment = .fill
@@ -161,7 +161,7 @@ extension DetailsDocumentsViewController {
     }
     
     private func configStackMade() -> UIStackView {
-        let stack = UIStackView(arrangedSubviews: [madeLable, switcherMade])
+        let stack = UIStackView(arrangedSubviews: [madeLabel, switcherMade])
         stack.axis = .horizontal
         stack.distribution = .fill
         stack.alignment = .fill
@@ -170,7 +170,7 @@ extension DetailsDocumentsViewController {
     }
     
     private func configStackPaid() -> UIStackView {
-        let stack = UIStackView(arrangedSubviews: [paidLable, switcherPaid])
+        let stack = UIStackView(arrangedSubviews: [paidLabel, switcherPaid])
         stack.axis = .horizontal
         stack.distribution = .fill
         stack.alignment = .fill

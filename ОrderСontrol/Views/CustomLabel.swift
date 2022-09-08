@@ -1,5 +1,5 @@
 //
-//  CustomLable.swift
+//  CustomLabel.swift
 //  ОrderСontrol
 //
 //  Created by Julia Romanenko on 01.09.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomLable: UILabel {
+class CustomLabel: UILabel {
     init(text: String) {
         super.init(frame: .zero)
         

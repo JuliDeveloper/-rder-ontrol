@@ -18,9 +18,9 @@ final class MainViewController: UIViewController {
         return button
     }()
     
-    private lazy var serviseButton: UIButton = {
+    private lazy var serviceButton: UIButton = {
         let button = UIButton(type: .system)
-        button.config("Servise", "tray.full.fill")
+        button.config("Service", "tray.full.fill")
         button.addTarget(self,
                          action: #selector(openServiceController),
                          for: .touchUpInside)
@@ -57,7 +57,7 @@ final class MainViewController: UIViewController {
 extension MainViewController {
     private func setUpStack() {
         let stack = UIStackView(arrangedSubviews: [customerButton,
-                                                   serviseButton,
+                                                   serviceButton,
                                                    documentsButton,
                                                    ordersReportButton])
         stack.axis = .vertical

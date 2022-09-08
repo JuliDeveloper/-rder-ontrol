@@ -12,7 +12,7 @@ private let reuseIdentifier = "cell"
 class ServicesTableViewController: UITableViewController {
     
     private let context = StorageManager.shared.context
-    private var services: [Servise] = []
+    private var services: [Service] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,7 +106,7 @@ extension ServicesTableViewController {
     }
     
     private func saveNewService(_ title: String, _ info: String) {
-        let servise = Servise(context: context)
+        let servise = Service(context: context)
         
         servise.name = title
         servise.info = info

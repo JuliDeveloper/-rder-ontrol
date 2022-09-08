@@ -1,5 +1,5 @@
 //
-//  Servise+CoreDataProperties.swift
+//  Service+CoreDataProperties.swift
 //  ОrderСontrol
 //
 //  Created by Julia Romanenko on 24.08.2022.
@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 
-extension Servise {
+extension Service {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Servise> {
-        return NSFetchRequest<Servise>(entityName: "Servise")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Service> {
+        return NSFetchRequest<Service>(entityName: "Service")
     }
 
     @NSManaged public var info: String?
@@ -23,7 +23,7 @@ extension Servise {
 }
 
 // MARK: Generated accessors for rowsOfOrders
-extension Servise {
+extension Service {
 
     @objc(addRowsOfOrdersObject:)
     @NSManaged public func addToRowsOfOrders(_ value: RowOfOrder)
@@ -39,6 +39,6 @@ extension Servise {
 
 }
 
-extension Servise : Identifiable {
+extension Service : Identifiable {
 
 }
