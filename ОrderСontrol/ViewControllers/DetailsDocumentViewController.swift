@@ -84,6 +84,7 @@ class DetailsDocumentsViewController: UIViewController {
         button.layer.cornerRadius = Constant.radius
         button.translatesAutoresizingMaskIntoConstraints = false
         button.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        button.addTarget(self, action: #selector(addRow), for: .touchUpInside)
         return button
     }()
     
@@ -210,6 +211,11 @@ extension DetailsDocumentsViewController {
             self.order?.customer = customer
             self.customerTextField.text = customer.name
         }
+    }
+    
+    @objc private func addRow() {
+        let detailsRowVC = DetailsRowViewController()
+        navigationController?.pushViewController(detailsRowVC, animated: true)
     }
 }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2527DCAF28CA32EE0049BE19 /* RowOfOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2527DCAE28CA32EE0049BE19 /* RowOfOrderViewController.swift */; };
+		2527DCB128CA37970049BE19 /* DetailsRowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2527DCB028CA37970049BE19 /* DetailsRowViewController.swift */; };
 		253B0FC928BAA76D0027943F /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FC828BAA76D0027943F /* Extension + UIViewController.swift */; };
 		253B0FCB28BAA8FD0027943F /* ServicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FCA28BAA8FD0027943F /* ServicesTableViewController.swift */; };
 		253B0FCD28BD34870027943F /* DocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B0FCC28BD34870027943F /* DocumentsTableViewController.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		2527DCAE28CA32EE0049BE19 /* RowOfOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowOfOrderViewController.swift; sourceTree = "<group>"; };
+		2527DCB028CA37970049BE19 /* DetailsRowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRowViewController.swift; sourceTree = "<group>"; };
 		253B0FC828BAA76D0027943F /* Extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
 		253B0FCA28BAA8FD0027943F /* ServicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesTableViewController.swift; sourceTree = "<group>"; };
 		253B0FCC28BD34870027943F /* DocumentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				253B0FCC28BD34870027943F /* DocumentsTableViewController.swift */,
 				253B0FCE28BD351B0027943F /* DetailsDocumentViewController.swift */,
 				2527DCAE28CA32EE0049BE19 /* RowOfOrderViewController.swift */,
+				2527DCB028CA37970049BE19 /* DetailsRowViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				25D1B6B428B6ABAA002D3B6C /* Order+CoreDataProperties.swift in Sources */,
 				253B0FFC28C1391F0027943F /* CustomSwitch.swift in Sources */,
 				253B0FF428C12D460027943F /* Constants.swift in Sources */,
+				2527DCB128CA37970049BE19 /* DetailsRowViewController.swift in Sources */,
 				253B0FCF28BD351B0027943F /* DetailsDocumentViewController.swift in Sources */,
 				25D1B66B28B519E9002D3B6C /* MainViewController.swift in Sources */,
 				253B0FCD28BD34870027943F /* DocumentsTableViewController.swift in Sources */,
