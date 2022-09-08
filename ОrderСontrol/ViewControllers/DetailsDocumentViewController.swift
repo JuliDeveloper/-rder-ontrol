@@ -99,17 +99,13 @@ extension DetailsDocumentsViewController {
     
     @objc private func save() {
         
-        let customer = Customer(context: context)
-        
         if order == nil {
-            StorageManager.shared.addDocument(customer: customer,
-                                              customerName: customerTextField.text ?? "",
+            StorageManager.shared.addDocument(customerName: customerTextField.text ?? "",
                                               made: switcherMade.isOn,
                                               paid: switcherPaid.isOn,
                                               datePicker: datePicker)
         } else {
             StorageManager.shared.editDocument(document: order ?? Order(),
-                                               newCustomer: customer,
                                                newCustomerName: customerTextField.text ?? "",
                                                newMade: switcherMade.isOn,
                                                newPaid: switcherPaid.isOn)

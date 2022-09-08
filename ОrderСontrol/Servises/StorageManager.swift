@@ -79,26 +79,17 @@ class StorageManager {
         }
     }
     
-    func addDocument(customer: Customer,
-                     customerName: String,
-                     made: Bool, paid: Bool,
-                     datePicker: UIDatePicker) {
+    func addDocument(customerName: String, made: Bool, paid: Bool, datePicker: UIDatePicker) {
         let document = Order(context: context)
-        document.customer = customer
         document.customer?.name = customerName
         document.date = datePicker.date
         document.made = made
-        document.paid = made
+        document.paid = paid
         
         saveContext()
     }
     
-    func editDocument(document: Order,
-                      newCustomer: Customer,
-                      newCustomerName: String,
-                      newMade: Bool,
-                      newPaid: Bool) {
-        document.customer = newCustomer
+    func editDocument(document: Order, newCustomerName: String, newMade: Bool, newPaid: Bool) {
         document.customer?.name = newCustomerName
         document.made = newMade
         document.paid = newPaid
