@@ -91,8 +91,17 @@ extension DetailsRowViewController {
     
     @objc private func save() {
         
-        
-        
+        if row == nil {
+            StorageManager.shared.addRowOfOrder(customerName: row?.order?.customer?.name ?? "",
+                                                serviceName: serviceTextField.text ?? "",
+                                                price: priceTextField.text ?? "")
+            
+        } else {
+            StorageManager.shared.editRowOfOrder(row: row ?? RowOfOrder(),
+                                                 newCustomerName: row?.order?.customer?.name ?? "",
+                                                 newService: serviceTextField.text ?? "",
+                                                 newPrice: priceTextField.text ?? "")
+        }
         delegate?.reloadData()
         navigationController?.popViewController(animated: true)
     }

@@ -108,6 +108,23 @@ class StorageManager {
         saveContext()
     }
     
+    func addRowOfOrder(customerName: String,serviceName: String, price: String) {
+        let rowOfOrder = RowOfOrder(context: context)
+        rowOfOrder.order?.customer?.name = customerName
+        rowOfOrder.service?.name = serviceName
+        rowOfOrder.sum = Float(price) ?? 0.0
+        
+        saveContext()
+    }
+    
+    func editRowOfOrder(row: RowOfOrder, newCustomerName: String, newService: String, newPrice: String) {
+        row.order?.customer?.name = newCustomerName
+        row.service?.name = newService
+        row.sum = Float(newPrice) ?? 0.0
+        
+        saveContext()
+    }
+    
     func deleteObject(object: NSManagedObject) {
         context.delete(object)
         saveContext()
